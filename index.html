@@ -206,8 +206,8 @@ smartAdd=function(){
  var folder=classify(text,amount), who=personInText(text), type=expenseType(text);
  if(folder==="Otros"){
    window.pendingQuick={text:text,amount:amount,type:type};
-   var opts=state.folders.filter(function(f){return f.name!=="Otros"}).map(function(f){return '<button class="btn tiny light" onclick="window.chooseQuick(\\''+f.name.replace(/'/g,"")+"\\')">'+f.name+'</button>'}).join("");
-   document.getElementById("askBox").innerHTML='<div class="askbox"><b>No estoy seguro de dónde ponerlo.</b><br><span class="muted">'+text+' · '+cash(amount)+'</span><div>¿Dónde quieres agregar esto?</div><div class="askbuttons">'+opts+'<button class="btn tiny light" onclick="window.chooseQuick(\\'Otros\\')">Otros</button></div></div>';
+   var opts=state.folders.filter(function(f){return f.name!=="Otros"}).map(function(f){return '<button class="btn tiny light" data-folder="'+encodeURIComponent(f.name)+'" onclick="window.chooseQuick(decodeURIComponent(this.dataset.folder))">'+f.name+'</button>'}).join("");
+   document.getElementById("askBox").innerHTML='<div class="askbox"><b>No estoy seguro de dónde ponerlo.</b><br><span class="muted">'+text+' · '+cash(amount)+'</span><div>¿Dónde quieres agregar esto?</div><div class="askbuttons">'+opts+'<button class="btn tiny light" onclick="window.chooseQuick(&quot;Otros&quot;)">Otros</button></div></div>';
    return;
  }
  state.moves.unshift({id:state.seq++,date:new Date().toISOString().slice(0,10),text:text,amount:amount,folder:folder,type:type,pending:false});
