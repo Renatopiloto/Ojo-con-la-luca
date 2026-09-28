@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ojo con la Luca</title>
+<style>
+:root{--ink:#17352d;--green:#2c6657;--mint:#eaf3ef;--bg:#f5f4ef;--white:#fff;--muted:#75807c;--line:#e4e7e2;--sand:#f5ecdc;--gold:#9b7337}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,sans-serif;color:var(--ink)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}.top{max-width:1140px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:11px;align-items:center}.mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:white;font-weight:800}.brand b{font-size:20px}.brand small{display:block;color:var(--muted);margin-top:2px}
+nav{display:flex;gap:4px}.tab{border:0;background:transparent;padding:10px 13px;border-radius:9px;color:var(--muted);font-weight:700;cursor:pointer}.tab.active{background:var(--mint);color:var(--green)}
+main{max-width:1140px;margin:auto;padding:27px 22px}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(125deg,#17372f,#326a5b);color:#fff;border-radius:24px;padding:31px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:end}.hero h1{font-size:31px;margin:4px 0 7px}.hero p{margin:0;opacity:.8}.heroR{text-align:right}.heroR b{display:block;font-size:29px}.heroR small{opacity:.7}.eyebrow{text-transform:uppercase;letter-spacing:1.2px;font-size:10px;font-weight:800;color:#a8c8bf}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;margin-bottom:13px;box-shadow:0 5px 18px #17352d08}.kpi small,.muted{font-size:12px;color:var(--muted)}.kpi b{display:block;font-size:22px;margin-top:7px}h2{font-size:18px;margin:6px 0 14px}h3{font-size:14px}
+.btn{border:0;background:var(--green);color:#fff;padding:11px 14px;border-radius:10px;font-weight:bold;cursor:pointer}.btn.light{background:var(--mint);color:var(--green)}.btn.tiny{padding:7px 9px;font-size:11px}.btn.danger{background:#f4ece9;color:#8a4d43}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff}.natural{display:grid;grid-template-columns:1fr auto;gap:8px}.hint{font-size:12px;color:var(--muted);margin:8px 0 0}.notice,.ai{background:var(--mint);padding:13px;border-radius:11px;font-size:13px;line-height:1.5}
+.item{display:grid;grid-template-columns:2fr 1.2fr 1fr auto;gap:8px;align-items:center;border-bottom:1px solid var(--line);padding:11px 0;font-size:13px}.pill{background:#f0f2ef;padding:5px 8px;border-radius:12px;font-size:11px;display:inline-block}.ant{background:#f6ead7;color:#79571f}
+.folderGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.folder{background:#fafbf9;border:1px solid var(--line);border-radius:14px;padding:14px;min-height:105px}.folderIcon{font-size:22px}.folder b{display:block;margin:7px 0 4px}.folder small{color:var(--muted);line-height:1.35}.folder.custom{border-color:#b9d0c8;background:#f7fbf9}
+.capture{border:1px dashed #b8cbc4;background:#fbfcfa;padding:18px;border-radius:14px;text-align:center}.hidden{display:none}.photoGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:10px}.photoGrid img{width:100%;height:82px;object-fit:cover;border-radius:9px}
+.filters{display:flex;gap:6px}.filter{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:20px;cursor:pointer}.filter.active{background:var(--ink);color:#fff}.progress{height:8px;background:#edf0ee;border-radius:10px;overflow:hidden;margin:10px 0}.fill{height:100%;background:var(--green)}.goal{border-left:3px solid var(--green)}.goalTop{display:flex;justify-content:space-between}.proj{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:12px}.proj div{background:#f7f8f5;border-radius:12px;padding:13px}.proj small{font-size:11px;color:var(--muted)}.proj b{display:block;margin-top:5px}.tip{background:#faf7f0;border-left:3px solid var(--gold);padding:13px;border-radius:9px;margin-top:11px;font-size:13px;line-height:1.5}.form2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:760px){.top{display:block}.brand{margin-bottom:9px}nav{overflow:auto}.hero{display:block}.heroR{text-align:left;margin-top:20px}.grid4,.grid2,.folderGrid,.proj{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr 1fr}.natural{grid-template-columns:1fr}}@media(max-width:470px){.grid4,.grid2,.folderGrid,.proj,.form2{grid-template-columns:1fr}.hero h1{font-size:25px}}
+</style></head><body>
+<header><div class="top"><div class="brand"><div class="mark">$</div><div><b>Ojo con la Luca</b><small>De poquito en poquito, todo suma.</small></div></div>
+<nav><button class="tab active" data-page="home">Inicio</button><button class="tab" data-page="moves">Movimientos</button><button class="tab" data-page="folders">Carpetas</button><button class="tab" data-page="savings">Ahorros</button><button class="tab" data-page="ia">Ojo IA</button></nav></div></header>
+<main>
+<section id="home" class="page active"><div class="hero"><div><span class="eyebrow">Tu plata, más clara</span><h1>¿Dónde se fueron las lucas?</h1><p>Escríbelo como lo dirías normalmente. Ojo con la Luca lo ordena.</p></div><div class="heroR"><small>Disponible</small><b id="available">$0</b></div></div>
+<div class="grid4"><div class="card kpi"><small>Ingresos</small><b id="incomeK">$0</b></div><div class="card kpi"><small>Gastos</small><b id="expenseK">$0</b></div><div class="card kpi"><small>Hormiguitas</small><b id="antK">$0</b></div><div class="card kpi"><small>Por revisar</small><b id="pendingK">0</b></div></div>
+<div class="card"><span class="eyebrow" style="color:var(--green)">Registro inteligente</span><h2>¿Qué gastaste?</h2><div class="natural"><input id="naturalInput" placeholder="Ej: bebida 1200 en la U"><button class="btn" id="smartBtn">Guardar gasto</button></div><p class="hint">Ejemplos: “bencina 45 lucas”, “luz 65.000”, “bebida 1200”, “almuerzo 5.500 en la universidad”.</p><div id="lastResult"></div></div>
+<div class="grid2"><div class="card"><h2>Subir comprobantes</h2><div class="grid2"><div class="capture"><b>Sacar foto</b><br><br><label class="btn" for="cam">Cámara</label><input class="hidden" id="cam" type="file" accept="image/*" capture="environment"></div><div class="capture"><b>Varias boletas</b><br><br><label class="btn light" for="gal">Elegir fotos</label><input class="hidden" id="gal" type="file" accept="image/*" multiple></div></div><div id="photoMsg" class="notice" style="margin-top:10px">Las fotos quedan como pendientes en este prototipo.</div><div id="photoGrid" class="photoGrid"></div></div><div class="card"><h2>Por revisar</h2><div id="pending"></div></div></div></section>
+
+<section id="moves" class="page"><div class="hero"><div><span class="eyebrow">Historial</span><h1>Movimientos</h1><p>Revisa dónde se está yendo tu plata.</p></div></div><div class="card"><div class="filters"><button class="filter active" data-view="dia">Día</button><button class="filter" data-view="mes">Mes</button><button class="filter" data-view="ano">Año</button></div><div id="history"></div></div></section>
+
+<section id="folders" class="page"><div class="hero"><div><span class="eyebrow">Orden personalizable</span><h1>Tus carpetas</h1><p>Parte con carpetas simples y agrega las que tengan sentido para tu vida.</p></div></div>
+<div class="grid2"><div class="card"><h2>Agregar una carpeta</h2><input id="folderCommand" placeholder="Ej: agregar una carpeta de gasto en la universidad"><button class="btn" id="folderBtn" style="margin-top:8px">Crear carpeta</button><p class="hint">Ojo con la Luca aprende palabras relacionadas. Por ejemplo, Universidad reconoce “universidad”, “uni” y “la U”.</p><div id="folderResult"></div></div><div class="card"><h2>¿Cómo decide?</h2><div class="ai">Primero busca contexto específico. Si escribes <b>“bebida 1200 en la U”</b>, irá a <b>Universidad</b>. Si sólo escribes <b>“bebida 1200”</b>, irá a <b>Hormiguitas</b>. Si no encuentra una coincidencia clara, quedará en <b>Otros</b>.</div></div></div><div id="folderGrid" class="folderGrid"></div></section>
+
+<section id="savings" class="page"><div class="hero"><div><span class="eyebrow">Ahorros</span><h1>Que cada luca tenga un destino.</h1><p>Convierte tus objetivos en metas diarias, semanales y mensuales.</p></div><div class="heroR"><small>Total ahorrado</small><b id="savedHero">$0</b></div></div>
+<div class="grid4"><div class="card kpi"><small>Ahorrado</small><b id="savedK">$0</b></div><div class="card kpi"><small>Objetivos</small><b id="goalCount">0</b></div><div class="card kpi"><small>Meta total</small><b id="targetK">$0</b></div><div class="card kpi"><small>Falta</small><b id="missingK">$0</b></div></div>
+<div class="grid2"><div class="card"><h2>Nuevo ahorro destinado a...</h2><div class="form2"><input id="goalName" placeholder="Vacaciones"><input id="goalAmount" type="number" placeholder="Meta $"></div><input id="goalDays" type="number" placeholder="Plazo en días" style="margin-top:8px"><button class="btn" id="goalBtn" style="margin-top:8px">Crear objetivo</button></div><div class="card"><h2>Agregar ahorro</h2><select id="goalSelect"></select><input id="contribution" type="number" placeholder="Monto $" style="margin-top:8px"><button class="btn" id="contributeBtn" style="margin-top:8px">Registrar aporte</button></div></div><div id="goals"></div></section>
+
+<section id="ia" class="page"><div class="hero"><div><span class="eyebrow">Análisis</span><h1>Ojo IA</h1><p>Detecta cuánto pesan esas lucas pequeñas cuando se repiten.</p></div></div><div class="grid2"><div class="card"><h2>Hormiguitas</h2><b id="antMonth" style="font-size:28px">$0</b><div id="antProjection"></div></div><div class="card"><h2>¿Qué pasa si...?</h2><input id="cut" type="number" placeholder="Ej: 3000 diarios"><button class="btn" id="simBtn" style="margin-top:8px">Calcular</button><div id="simulation" class="ai" style="margin-top:10px">Mira cuánto suma un pequeño monto diario.</div></div></div></section>
+</main>
+<script>
+(function(){
+var KEY="ojoConLaLucaV3";
+var defaults={
+ income:1800000, seq:100,
+ folders:[
+  {name:"Transporte",keys:["bencina","copec","shell","aramco","combustible","uber","cabify","taxi","tag","estacionamiento"],icon:"🚗",custom:false},
+  {name:"Créditos",keys:["credito","crédito","cuota","prestamo","préstamo","tarjeta"],icon:"💳",custom:false},
+  {name:"Gastos del hogar",keys:["luz","enel","cge","agua","gas","internet","dividendo","arriendo","gastos comunes"],icon:"⌂",custom:false},
+  {name:"Alimentación",keys:["supermercado","jumbo","lider","unimarc","tottus","restaurant","restaurante","delivery"],icon:"◉",custom:false},
+  {name:"Salud",keys:["farmacia","remedio","medicamento","doctor","medico","médico","clinica","clínica"],icon:"＋",custom:false},
+  {name:"Hormiguitas",keys:["bebida","cafe","café","snack","dulce","helado","chicle"],icon:"🐜",custom:false},
+  {name:"Otros",keys:[],icon:"…",custom:false}
+ ],
+ moves:[
+  {id:1,date:"2026-09-27",text:"Dividendo",amount:650000,folder:"Gastos del hogar",pending:false},
+  {id:2,date:"2026-09-27",text:"Bencina Copec",amount:45000,folder:"Transporte",pending:false},
+  {id:3,date:"2026-09-26",text:"Café",amount:2500,folder:"Hormiguitas",pending:false}
+ ],
+ goals:[{id:10,name:"Vacaciones",target:600000,days:90,saved:120000},{id:11,name:"Fondo de emergencia",target:1000000,days:180,saved:200000}]
+};
+var state;
+try{state=JSON.parse(localStorage.getItem(KEY))||defaults}catch(e){state=defaults}
+if(!state.folders) state=defaults;
+var view="dia", pics=[];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function cash(n){return "$"+Math.round(n||0).toLocaleString("es-CL")}
+function norm(s){return (s||"").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")}
+function amountFrom(s){
+ var x=norm(s).replace(/\./g,"").replace(/,/g,"");
+ var m=x.match(/(\d+)\s*lucas?/); if(m)return Number(m[1])*1000;
+ var re=/\$?\s*(\d{3,8})/g, z, nums=[]; while((z=re.exec(x))!==null)nums.push(Number(z[1]));
+ return nums.length?Math.max.apply(null,nums):0;
+}
+function classify(text,amount){
+ var s=norm(text), best=null, score=0;
+ state.folders.forEach(function(f){
+   if(f.name==="Otros")return;
+   var sc=0;
+   f.keys.forEach(function(k){var kk=norm(k); if(s.indexOf(kk)>=0) sc+= (f.custom?5:2)});
+   if(sc>score){score=sc;best=f.name}
+ });
+ if(best)return best;
+ if(amount>0 && amount<=5000)return "Hormiguitas";
+ return "Otros";
+}
+function smartAdd(){
+ var el=document.getElementById("naturalInput"), text=el.value.trim(), amount=amountFrom(text);
+ if(!text||!amount){document.getElementById("lastResult").innerHTML='<div class="tip">No pude reconocer el monto. Prueba: <b>“bebida 1200”</b> o <b>“bencina 45 lucas”</b>.</div>';return}
+ var folder=classify(text,amount);
+ state.moves.unshift({id:state.seq++,date:new Date().toISOString().slice(0,10),text:text,amount:amount,folder:folder,pending:false});
+ save();el.value="";document.getElementById("lastResult").innerHTML='<div class="tip">Guardado en <b>'+folder+'</b> · '+cash(amount)+'</div>';render();
+}
+function createFolder(){
+ var el=document.getElementById("folderCommand"), raw=el.value.trim();if(!raw)return;
+ var s=norm(raw), name="";
+ var m=s.match(/(?:carpeta|gasto|gastos)\s+(?:de|en|para)?\s*(.+)$/);
+ name=m?m[1]:raw; name=name.replace(/^la\s+/,"").trim();
+ if(s.indexOf("universidad")>=0||s.indexOf(" uni")>=0||s.indexOf(" la u")>=0){name="Universidad"}
+ name=name.charAt(0).toUpperCase()+name.slice(1);
+ var keys=[norm(name)];
+ if(norm(name)==="universidad")keys=["universidad","uni","la u","en la u","facultad","campus"];
+ if(state.folders.some(function(f){return norm(f.name)===norm(name)})){document.getElementById("folderResult").innerHTML='<div class="tip">Esa carpeta ya existe.</div>';return}
+ state.folders.splice(state.folders.length-1,0,{name:name,keys:keys,icon:"＋",custom:true});save();el.value="";
+ document.getElementById("folderResult").innerHTML='<div class="tip">Creé <b>'+name+'</b> y desde ahora tendrá prioridad cuando encuentre sus palabras asociadas.</div>';render();
+}
+function addPhotos(files){Array.from(files||[]).forEach(function(f){pics.push(URL.createObjectURL(f));state.moves.unshift({id:state.seq++,date:new Date().toISOString().slice(0,10),text:"Comprobante pendiente",amount:0,folder:"Otros",pending:true})});save();render()}
+function complete(id){var x=state.moves.find(function(m){return m.id===id});if(!x)return;var t=prompt("¿Qué gasto fue?",""),a=Number(prompt("Monto",""));if(!t||!a)return;x.text=t;x.amount=a;x.folder=classify(t,a);x.pending=false;save();render()}
+function removeMove(id){state.moves=state.moves.filter(function(x){return x.id!==id});save();render()}
+function createGoal(){var n=document.getElementById("goalName").value.trim(),t=Number(document.getElementById("goalAmount").value),d=Number(document.getElementById("goalDays").value);if(!n||!t||!d)return;state.goals.push({id:state.seq++,name:n,target:t,days:d,saved:0});save();render()}
+function contribute(){var id=Number(document.getElementById("goalSelect").value),a=Number(document.getElementById("contribution").value),g=state.goals.find(function(x){return x.id===id});if(!g||!a)return;g.saved+=a;document.getElementById("contribution").value="";save();render()}
+function renderHistory(){
+ var ok=state.moves.filter(function(x){return !x.pending}),groups={};
+ ok.forEach(function(x){var k=view==="dia"?x.date:(view==="mes"?x.date.slice(0,7):x.date.slice(0,4));if(!groups[k])groups[k]=[];groups[k].push(x)});
+ var keys=Object.keys(groups).sort().reverse(), html="";
+ keys.forEach(function(k){html+="<h3>"+k+" · "+cash(groups[k].reduce(function(s,x){return s+x.amount},0))+"</h3>";groups[k].forEach(function(x){html+='<div class="item"><span>'+x.text+'</span><span><span class="pill '+(x.folder==="Hormiguitas"?"ant":"")+'">'+x.folder+'</span></span><b>'+cash(x.amount)+'</b><button class="btn tiny danger" onclick="window.delMove('+x.id+')">Eliminar</button></div>'})});
+ document.getElementById("history").innerHTML=html||'<p class="muted">Sin movimientos.</p>';
+}
+function render(){
+ var ok=state.moves.filter(function(x){return !x.pending}), total=ok.reduce(function(s,x){return s+x.amount},0), ants=ok.filter(function(x){return x.folder==="Hormiguitas"}).reduce(function(s,x){return s+x.amount},0), pen=state.moves.filter(function(x){return x.pending}), saved=state.goals.reduce(function(s,x){return s+x.saved},0), target=state.goals.reduce(function(s,x){return s+x.target},0);
+ document.getElementById("incomeK").textContent=cash(state.income);document.getElementById("expenseK").textContent=cash(total);document.getElementById("available").textContent=cash(state.income-total);document.getElementById("antK").textContent=document.getElementById("antMonth").textContent=cash(ants);document.getElementById("pendingK").textContent=pen.length;
+ document.getElementById("pending").innerHTML=pen.length?pen.map(function(x){return '<div class="item"><span>'+x.date+'</span><span>Por clasificar</span><span>Sin monto</span><button class="btn tiny light" onclick="window.completeMove('+x.id+')">Completar</button></div>'}).join(""):'<p class="muted">Todo al día.</p>';
+ document.getElementById("photoGrid").innerHTML=pics.map(function(x){return '<img src="'+x+'">'}).join("");
+ document.getElementById("folderGrid").innerHTML=state.folders.map(function(f){return '<div class="folder '+(f.custom?"custom":"")+'"><div class="folderIcon">'+f.icon+'</div><b>'+f.name+'</b><small>'+(f.keys.length?"Reconoce: "+f.keys.slice(0,5).join(", "):"Recibe gastos sin coincidencia clara.")+'</small></div>'}).join("");
+ document.getElementById("savedHero").textContent=document.getElementById("savedK").textContent=cash(saved);document.getElementById("goalCount").textContent=state.goals.length;document.getElementById("targetK").textContent=cash(target);document.getElementById("missingK").textContent=cash(Math.max(0,target-saved));
+ document.getElementById("goalSelect").innerHTML=state.goals.map(function(g){return '<option value="'+g.id+'">'+g.name+'</option>'}).join("");
+ document.getElementById("goals").innerHTML=state.goals.map(function(g){var rem=Math.max(0,g.target-g.saved),daily=rem/g.days,weekly=daily*7,monthly=daily*30,p=Math.min(100,g.saved/g.target*100);return '<div class="card goal"><div class="goalTop"><h2>'+g.name+'</h2><b>'+cash(g.saved)+' / '+cash(g.target)+'</b></div><div class="progress"><div class="fill" style="width:'+p+'%"></div></div><div class="proj"><div><small>Por día</small><b>'+cash(daily)+'</b></div><div><small>Por semana</small><b>'+cash(weekly)+'</b></div><div><small>En 30 días</small><b>'+cash(monthly)+'</b></div></div><div class="tip">Ahorrando <b>'+cash(daily)+' diarios</b>, puedes avanzar hacia esta meta en los próximos '+g.days+' días.</div></div>'}).join("");
+ document.getElementById("antProjection").innerHTML='<div class="tip">Tus gastos en Hormiguitas suman <b>'+cash(ants)+'</b>. Si ese ritmo fuera mensual, equivaldría a cerca de <b>'+cash(ants*12)+'</b> al año.</div>';
+ renderHistory();
+}
+document.querySelectorAll(".tab").forEach(function(b){b.addEventListener("click",function(){document.querySelectorAll(".page").forEach(function(p){p.classList.remove("active")});document.querySelectorAll(".tab").forEach(function(t){t.classList.remove("active")});document.getElementById(b.dataset.page).classList.add("active");b.classList.add("active");render()})});
+document.querySelectorAll(".filter").forEach(function(b){b.addEventListener("click",function(){view=b.dataset.view;document.querySelectorAll(".filter").forEach(function(x){x.classList.remove("active")});b.classList.add("active");renderHistory()})});
+document.getElementById("smartBtn").onclick=smartAdd;document.getElementById("folderBtn").onclick=createFolder;document.getElementById("cam").onchange=function(){addPhotos(this.files)};document.getElementById("gal").onchange=function(){addPhotos(this.files)};document.getElementById("goalBtn").onclick=createGoal;document.getElementById("contributeBtn").onclick=contribute;
+document.getElementById("simBtn").onclick=function(){var n=Number(document.getElementById("cut").value);if(n)document.getElementById("simulation").innerHTML="Son aproximadamente <b>"+cash(n*30)+" al mes</b> y <b>"+cash(n*365)+" al año</b>."};
+window.completeMove=complete;window.delMove=removeMove;render();
+})();
+</script></body></html>
