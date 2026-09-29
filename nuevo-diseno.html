@@ -255,10 +255,27 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 .ob-err{margin:0 0 14px;color:var(--danger);font-weight:700;font-size:15px;min-height:1.2em}
 .ob-err:empty{margin:0;min-height:0}
 .ob-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px}
-.ob-preview{display:flex;gap:6px;flex-wrap:wrap;min-height:34px;margin-top:4px}
-.tag{display:inline-flex;align-items:center;gap:6px;background:var(--mint-2);border:1px solid var(--line);border-radius:999px;padding:3px 10px 3px 3px;font-size:14px;font-weight:600}
-.tag .av{width:26px;height:26px;font-size:12px}
-.tag small{color:var(--muted);font-weight:500}
+.adder{display:flex;gap:8px}
+.adder input{flex:1;min-width:0}
+.adder .btn{min-height:50px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tags:empty{display:none}
+.tag{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:3px 4px 3px 3px;font-size:15px;font-weight:600;min-height:40px}
+.tag .av{width:30px;height:30px;font-size:13px}
+.tag small{color:var(--muted);font-weight:500;margin-right:8px}
+.tag .x{width:32px;height:32px;border-radius:50%;border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
+.tag .x:hover{background:var(--danger-bg);color:var(--danger)}
+.tag.me{background:var(--mint-2);padding-right:4px}
+.more{border:1.5px dashed var(--line-2);border-radius:14px;padding:0 16px;margin-bottom:12px;background:#fff}
+.more[open]{border-style:solid;padding-bottom:4px}
+.more summary{cursor:pointer;list-style:none;min-height:50px;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--deep)}
+.more summary::-webkit-details-marker{display:none}
+.more summary small{color:var(--muted);font-weight:500}
+.more .field{margin-bottom:12px}
+.band-btn{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fff;font-weight:600;font-size:14px;cursor:pointer}
+.band-btn:hover{background:rgba(255,255,255,.08)}
+.band-btn svg{width:18px;height:18px}
+.greet-r{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 
 /* ---------- Celular ---------- */
 @media(max-width:860px){
@@ -371,13 +388,27 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
     </div>
 
     <div id="step2" class="step">
-      <h1>¿Quiénes viven contigo?</h1>
-      <p class="lead">Así puedes ver cuánto gasta cada uno. Separa los nombres con coma.</p>
-      <div class="field"><label for="setPeople">Personas de tu hogar</label><input id="setPeople" placeholder="Ej: Renato, Rebeca, Franco"></div>
-      <div class="field"><label for="setPets">Mascotas <span class="muted">(opcional)</span></label><input id="setPets" placeholder="Ej: Luna, Milo"></div>
-      <div class="field"><label for="setBusinesses">¿Llevas también los gastos de alguna empresa? <span class="muted">(opcional)</span></label><input id="setBusinesses" placeholder="Ej: Covalso, Tanque Motors"><p class="help">Puedes agregarlas después desde Editar mi hogar.</p></div>
-      <div class="ob-preview" id="obPreview" aria-live="polite"></div>
-      <div class="ob-actions" style="margin-top:22px"><button id="backSetup" class="btn ghost big">Atrás</button><button id="finishSetup" class="btn big">Guardar mi hogar</button></div>
+      <h1>¿Con quién compartes gastos?</h1>
+      <p class="lead">Agrega a las personas con las que llevas las cuentas, una por una. Si las llevas solo, deja esto vacío y toca Listo.</p>
+      <div class="field">
+        <label for="add-people">Personas</label>
+        <div class="adder"><input id="add-people" placeholder="Ej: Rebeca" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-add="people">Agregar</button></div>
+        <div class="tags" id="tags-people" aria-live="polite"></div>
+      </div>
+      <details class="more" id="more-pets"><summary>+ Mascotas <small>(opcional)</small></summary>
+        <div class="field">
+          <div class="adder"><input id="add-pets" placeholder="Ej: Luna" aria-label="Nombre de la mascota" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-add="pets">Agregar</button></div>
+          <div class="tags" id="tags-pets" aria-live="polite"></div>
+        </div>
+      </details>
+      <details class="more" id="more-businesses"><summary>+ Empresas <small>(opcional)</small></summary>
+        <div class="field">
+          <p class="help" style="margin-bottom:8px">Si también llevas los gastos de un negocio, agrégalo aquí.</p>
+          <div class="adder"><input id="add-businesses" placeholder="Ej: Covalso" aria-label="Nombre de la empresa" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-add="businesses">Agregar</button></div>
+          <div class="tags" id="tags-businesses" aria-live="polite"></div>
+        </div>
+      </details>
+      <div class="ob-actions" style="margin-top:18px"><button id="backSetup" class="btn ghost big">Atrás</button><button id="finishSetup" class="btn big">Listo</button></div>
     </div>
   </div>
 </div></div>
@@ -402,7 +433,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   <div class="home-band">
     <div class="greet">
       <div><span class="eyebrow">Tu plata, más clara</span><h1 id="hello">Hola</h1><p id="phrase">Veamos cómo van tus lucas.</p></div>
-      <span class="today" id="todayTxt"></span>
+      <div class="greet-r"><span class="today" id="todayTxt"></span><button type="button" class="band-btn" id="editHome2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c2 .7 3.2 2.5 3.6 5.2"/></svg>Mi hogar</button></div>
     </div>
   </div>
 
@@ -439,7 +470,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
       <button id="add" class="btn">Guardar gasto</button>
     </div>
     <div class="quick-meta">
-      <div class="whorow"><span>¿Quién?</span><div class="chips" id="whoChips"></div><select id="whoQuick" aria-label="Quién hizo el gasto" hidden></select></div>
+      <div class="whorow" id="whoRow"><span>¿Quién?</span><div class="chips" id="whoChips"></div><select id="whoQuick" aria-label="Quién hizo el gasto" hidden></select></div>
       <div class="photoActions">
         <label class="btn light photoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Tomar foto<input id="cameraInput" type="file" accept="image/*" capture="environment"></label>
         <label class="btn light photoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Elegir foto<input id="galleryInput" type="file" accept="image/*"></label>
@@ -460,8 +491,8 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-head"><h2>Tu hogar este mes</h2><button id="editHome" class="btn light tiny">Editar mi hogar</button></div>
+  <div class="card" id="homeCard">
+    <div class="card-head"><h2>Tu hogar este mes</h2><div style="display:flex;gap:8px"><button type="button" id="addMember" class="btn light tiny">+ Agregar</button><button id="editHome" class="btn ghost tiny">Editar</button></div></div>
     <div id="personChart" class="hh"></div>
     <div id="people" hidden></div>
   </div>
@@ -526,6 +557,8 @@ var MONTHS_S=["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov",
 var DAYS=["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
 var AV_COLORS=["#0B1F3A","#0B7550","#2F5D8C","#8A5A12","#6B3FA0","#9A3B2E"];
 function members(){return state.people.concat(state.pets).concat(state.businesses||[])}
+function isMe(n){return !!state.name&&norm(n)===norm(state.name)}
+function hasHousehold(){return state.people.some(function(n){return !isMe(n)})||state.pets.length>0||(state.businesses||[]).length>0}
 function memberColor(n){var i=members().indexOf(n);return AV_COLORS[(i<0?0:i)%AV_COLORS.length]}
 function initial(n){return esc(String(n||"?").trim().charAt(0).toUpperCase())}
 function avatar(n,cls){return '<span class="av'+(cls?' '+cls:'')+'" style="background:'+memberColor(n)+'" aria-hidden="true">'+initial(n)+'</span>'}
@@ -568,8 +601,9 @@ function renderCharts(){
    var meta=esc(m.folder)+(m.who?" · "+esc(m.who):"")+(m.photo?" · con boleta":"");
    return '<li>'+iconFor(folderByName(m.folder),true)+'<div class="rmain"><b>'+esc(m.text)+'</b><small>'+meta+'</small></div><div class="ramt"><b>−'+cash(m.amount)+'</b><small>'+shortDate(m.date)+'</small></div></li>';
  }).join(""):'<li class="muted" style="padding:0;border:0">Aún no hay movimientos.</li>';
+ $("homeCard").hidden=!hasHousehold();
  var list=[];
- state.people.forEach(function(n){list.push({n:n,role:"Persona",v:mm.filter(function(m){return m.who===n}).reduce(function(a,m){return a+Number(m.amount||0)},0)})});
+ state.people.forEach(function(n){list.push({n:n,role:isMe(n)?"Tú":"Persona",v:mm.filter(function(m){return m.who===n}).reduce(function(a,m){return a+Number(m.amount||0)},0)})});
  state.pets.forEach(function(n){list.push({n:n,role:"Mascota",v:mm.filter(function(m){return m.who===n||m.folder===n}).reduce(function(a,m){return a+Number(m.amount||0)},0)})});
  (state.businesses||[]).forEach(function(n){list.push({n:n,role:"Empresa",v:mm.filter(function(m){return m.folder===n}).reduce(function(a,m){return a+Number(m.amount||0)},0)})});
  $("personChart").innerHTML=list.length?list.map(function(x){return '<div class="member">'+avatar(x.n)+'<div><b>'+esc(x.n)+'</b><small>'+x.role+'</small><strong>'+cash(x.v)+'</strong></div></div>'}).join(""):'<div class="empty"><b>Aún no agregas a tu familia</b>Toca “Editar mi hogar” para sumar personas, mascotas o empresas.</div>';
@@ -578,6 +612,8 @@ function renderWho(){
  var wq=$("whoQuick"),box=$("whoChips"),all=state.people.concat(state.pets);
  var cur=wq.value;wq.innerHTML=all.map(function(n){return "<option>"+esc(n)+"</option>"}).join("");
  if(cur&&all.indexOf(cur)>=0)wq.value=cur;
+ /* Si llevas las cuentas solo, no hay nada que elegir */
+ $("whoRow").hidden=all.length<2;
  box.innerHTML=all.length?all.map(function(n){var on=wq.value===n;return '<button type="button" class="chip'+(on?' on':'')+'" data-who="'+encodeURIComponent(n)+'" aria-pressed="'+on+'">'+avatar(n)+esc(n)+'</button>'}).join(""):'<span class="muted">Agrega personas en Editar mi hogar</span>';
  box.querySelectorAll("[data-who]").forEach(function(b){b.onclick=function(){wq.value=decodeURIComponent(b.dataset.who);renderWho()}});
 }
@@ -645,10 +681,13 @@ function goTo(page){document.querySelectorAll(".tab").forEach(function(x){var on
 document.querySelectorAll(".tab").forEach(function(b){b.onclick=function(){goTo(b.dataset.page)}});
 document.querySelectorAll("[data-goto]").forEach(function(b){b.onclick=function(){goTo(b.dataset.goto)}});
 document.querySelectorAll(".ex").forEach(function(b){b.onclick=function(){$("quick").value=b.textContent;$("quick").focus()}});
-$("add").onclick=addQuick;$("quick").onkeydown=function(e){if(e.key==="Enter")addQuick()};$("createFolder").onclick=createFolder;$("editHome").onclick=showSetup;
+$("add").onclick=addQuick;$("quick").onkeydown=function(e){if(e.key==="Enter")addQuick()};$("createFolder").onclick=createFolder;
+$("editHome").onclick=function(){showSetup(1)};
+$("editHome2").onclick=function(){showSetup(state.configured?2:1)};
+$("addMember").onclick=function(){showSetup(2)};
 
 /* ---------- Configuración inicial ---------- */
-function setStep(n){$("step1").classList.toggle("active",n===1);$("step2").classList.toggle("active",n===2);$("seg2").classList.toggle("on",n===2);$("obStepTxt").textContent="Paso "+n+" de 2";$("setupErr").textContent="";$("onboard").scrollTop=0;var f=n===1?$("setName"):$("setPeople");if(f)setTimeout(function(){f.focus()},50)}
+function setStep(n){$("step1").classList.toggle("active",n===1);$("step2").classList.toggle("active",n===2);$("seg2").classList.toggle("on",n===2);$("obStepTxt").textContent="Paso "+n+" de 2";$("setupErr").textContent="";$("onboard").scrollTop=0;if(n===2)renderTags();var f=n===1?$("setName"):$("add-people");if(f)setTimeout(function(){f.focus()},50)}
 function syncModes(){var v=$("setMode").value;document.querySelectorAll(".mode").forEach(function(b){var on=b.dataset.mode===v;b.classList.toggle("on",on);b.setAttribute("aria-checked",on)});$("percentWrap").hidden=v!=="percent";updateHelps()}
 document.querySelectorAll(".mode").forEach(function(b){b.onclick=function(){$("setMode").value=b.dataset.mode;syncModes();if(b.dataset.mode==="percent")$("setPercent").focus()}});
 function updateHelps(){
@@ -657,18 +696,52 @@ function updateHelps(){
  $("percentHelp").textContent=inc&&p?"Apartarías "+cash(inc*p/100)+" cada mes.":"";
 }
 $("setIncome").oninput=updateHelps;$("setPercent").oninput=updateHelps;
-function splitNames(v){return v.split(",").map(function(x){return x.trim()}).filter(Boolean)}
-function updatePreview(){
- var ppl=splitNames($("setPeople").value),pets=splitNames($("setPets").value),biz=splitNames($("setBusinesses").value);
- var all=ppl.concat(pets).concat(biz);
- $("obPreview").innerHTML=all.map(function(n,i){var role=i<ppl.length?"":i<ppl.length+pets.length?" <small>mascota</small>":" <small>empresa</small>";return '<span class="tag"><span class="av" style="background:'+AV_COLORS[i%AV_COLORS.length]+'">'+initial(n)+'</span>'+esc(n)+role+'</span>'}).join("");
+/* Personas, mascotas y empresas se agregan una por una con el botón Agregar */
+var KINDS=["people","pets","businesses"];
+var draft={people:[],pets:[],businesses:[]};
+function myName(){return $("setName").value.trim()||state.name||""}
+function cleanName(s){return String(s||"").replace(/\s+/g," ").trim().slice(0,24)}
+function addDraft(kind,raw){
+ String(raw||"").split(",").forEach(function(part){
+   var n=cleanName(part);if(!n)return;
+   if(kind==="people"&&myName()&&norm(n)===norm(myName()))return;
+   var all=draft.people.concat(draft.pets,draft.businesses);
+   if(all.some(function(x){return norm(x)===norm(n)}))return;
+   draft[kind].push(n);
+ });
+ renderTags();
 }
-$("setPeople").oninput=updatePreview;$("setPets").oninput=updatePreview;$("setBusinesses").oninput=updatePreview;
-function showSetup(){$("onboard").classList.add("show");document.body.style.overflow="hidden";$("setName").value=state.name||"";$("setIncome").value=state.income||"";$("setMode").value=state.saveMode||"rest";$("setPercent").value=state.savePercent||"";$("setPeople").value=state.people.join(", ");$("setPets").value=state.pets.join(", ");$("setBusinesses").value=(state.businesses||[]).join(", ");$("setupTitle").textContent=state.configured?"Edita tu hogar":"Primero, cuéntame un poco de ti";syncModes();updatePreview();setStep(1)}
+function draftColor(n){var all=[myName()].concat(draft.people,draft.pets,draft.businesses);var i=all.indexOf(n);return AV_COLORS[(i<0?0:i)%AV_COLORS.length]}
+function tagAv(n){return '<span class="av" style="background:'+draftColor(n)+'" aria-hidden="true">'+initial(n)+'</span>'}
+function renderTags(){
+ KINDS.forEach(function(kind){
+   var html="";
+   if(kind==="people"&&draft.people.length&&myName())html+='<span class="tag me">'+tagAv(myName())+esc(myName())+'<small>tú</small></span>';
+   html+=draft[kind].map(function(n,i){return '<span class="tag">'+tagAv(n)+esc(n)+'<button type="button" class="x" data-kind="'+kind+'" data-i="'+i+'" aria-label="Quitar a '+esc(n)+'">×</button></span>'}).join("");
+   $("tags-"+kind).innerHTML=html;
+ });
+}
+document.querySelectorAll("[data-add]").forEach(function(b){b.onclick=function(){var k=b.dataset.add,inp=$("add-"+k);if(!inp.value.trim()){inp.focus();return}addDraft(k,inp.value);inp.value="";inp.focus()}});
+KINDS.forEach(function(k){$("add-"+k).onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();document.querySelector('[data-add="'+k+'"]').click()}}});
+$("step2").addEventListener("click",function(e){var x=e.target.closest(".x");if(!x)return;draft[x.dataset.kind].splice(+x.dataset.i,1);renderTags()});
+function showSetup(step){
+ step=step===2?2:1;
+ $("onboard").classList.add("show");document.body.style.overflow="hidden";
+ $("setName").value=state.name||"";$("setIncome").value=state.income||"";$("setMode").value=state.saveMode||"rest";$("setPercent").value=state.savePercent||"";
+ draft={people:state.people.filter(function(n){return !isMe(n)}),pets:state.pets.slice(),businesses:(state.businesses||[]).slice()};
+ KINDS.forEach(function(k){$("add-"+k).value=""});
+ $("more-pets").open=draft.pets.length>0;$("more-businesses").open=draft.businesses.length>0;
+ $("setupTitle").textContent=state.configured?"Edita tus datos":"Primero, cuéntame un poco de ti";
+ syncModes();renderTags();setStep(step);
+}
 $("nextSetup").onclick=function(){var n=$("setName").value.trim(),inc=Number($("setIncome").value);if(!n){$("setupErr").textContent="Cuéntame cómo te llamas.";$("setName").focus();return}if(!inc){$("setupErr").textContent="Ingresa tu ingreso mensual.";$("setIncome").focus();return}state.name=n;state.income=inc;state.saveMode=$("setMode").value;state.savePercent=Number($("setPercent").value)||0;setStep(2)};
 $("setName").onkeydown=$("setIncome").onkeydown=$("setPercent").onkeydown=function(e){if(e.key==="Enter")$("nextSetup").click()};
 $("backSetup").onclick=function(){setStep(1)};
-$("finishSetup").onclick=function(){state.people=splitNames($("setPeople").value);state.pets=splitNames($("setPets").value);state.businesses=splitNames($("setBusinesses").value);state.configured=true;ensurePeople();save();$("onboard").classList.remove("show");document.body.style.overflow="";render();goTo("home")};
+$("finishSetup").onclick=function(){
+ KINDS.forEach(function(k){var v=$("add-"+k).value;if(v.trim())addDraft(k,v);$("add-"+k).value=""});
+ /* Si compartes gastos con alguien, tú quedas incluido primero para poder elegir "quién" */
+ state.people=draft.people.length&&state.name?[state.name].concat(draft.people):draft.people.slice();
+ state.pets=draft.pets.slice();state.businesses=draft.businesses.slice();state.configured=true;ensurePeople();save();$("onboard").classList.remove("show");document.body.style.overflow="";render();goTo("home")};
 
 render();if(!state.configured)showSetup();
 })();
