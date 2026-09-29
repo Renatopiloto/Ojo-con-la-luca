@@ -4,7 +4,7 @@
 <meta name="theme-color" content="#0B1F3A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='44' fill='%230B1F3A'/%3E%3Crect x='22' y='52' width='156' height='96' rx='16' fill='%2314B87A'/%3E%3Cpath d='M40 100C66 58 134 58 160 100C134 142 66 142 40 100Z' fill='%23fff'/%3E%3Ccircle cx='100' cy='100' r='27' fill='%2314B87A'/%3E%3Ccircle cx='100' cy='100' r='12' fill='%230B1F3A'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Figtree:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
 <style>
 :root{
   --navy:#0B1F3A;--navy-2:#14304F;--navy-3:#1C3B60;--navy-ink:#A9BCD0;
@@ -454,6 +454,66 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   .tip.saved{flex-wrap:wrap}
 }
 @media (prefers-reduced-motion:reduce){.cb-mic.rec,.rdot{animation:none}}
+
+/* Consejos */
+.advice{display:flex;flex-direction:column;gap:14px}
+.adv-head{display:flex;gap:14px;align-items:flex-start}
+.adv-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;flex-shrink:0;background:var(--mint);color:var(--deep)}
+.adv-ic svg{width:24px;height:24px}
+.advice.warn .adv-ic{background:var(--warn-bg);color:var(--warn-ink)}
+.advice.bad .adv-ic{background:var(--danger-bg);color:var(--danger)}
+.adv-head h2{margin:0 0 4px}
+.adv-head p{margin:0;color:var(--ink);font-size:16px}
+.adv-tips{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.adv-tips li{position:relative;padding:10px 12px 10px 34px;background:var(--mint-2);border:1px solid var(--line);border-radius:12px;font-size:15px;color:var(--ink-2)}
+.adv-tips li b{color:var(--ink)}
+.adv-tips li::before{content:"";position:absolute;left:14px;top:18px;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.advice.warn .adv-tips li::before,#saveStatus.warn .adv-tips li::before{background:var(--warn)}
+.advice.bad .adv-tips li::before,#saveStatus.bad .adv-tips li::before{background:#D93D42}
+.adv-actions{display:flex;gap:8px;flex-wrap:wrap}
+.adv-actions:empty{display:none}
+#saveStatus .adv-tips{margin-top:10px}
+#saveStatus .adv-tips li{background:#fff}
+.m-more{color:#9BE8C5;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px;margin-top:-4px}
+/* Billetes con aspecto de billete real */
+.money .bn{--c1:#4F7A2A;--c2:#8DB352;position:relative;overflow:hidden;border-radius:5px;min-height:66px;padding:0 12px 0 0;color:#fff;border:1px solid rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:flex-end;justify-content:center;
+  background:
+    radial-gradient(ellipse 30% 62% at 20% 50%,rgba(255,255,255,.2),transparent 72%),
+    repeating-radial-gradient(circle at 20% 50%,rgba(255,255,255,.17) 0 .7px,transparent .8px 4px),
+    repeating-linear-gradient(118deg,rgba(255,255,255,.07) 0 .6px,transparent .7px 3.5px),
+    repeating-linear-gradient(62deg,rgba(0,0,0,.06) 0 .6px,transparent .7px 5px),
+    linear-gradient(135deg,var(--c2),var(--c1));
+  box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 3px 7px -2px rgba(11,31,58,.45)}
+.money .bn::before{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.42);border-radius:3px;pointer-events:none}
+.money .bn::after{content:"";position:absolute;left:9px;right:auto;top:50%;width:28px;height:28px;margin-top:-14px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:repeating-conic-gradient(rgba(255,255,255,.22) 0 6deg,transparent 6deg 12deg);pointer-events:none}
+.bn-v{position:relative;font-family:var(--font-d);font-weight:800;font-size:18px;letter-spacing:-.01em;line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 1px 1px rgba(0,0,0,.3)}
+.bn-v small{font-size:.68em;margin-right:1px;opacity:.9}
+.bn-w{position:relative;font-family:"Cinzel",Georgia,serif;font-size:8px;font-weight:700;letter-spacing:.12em;margin-top:4px;opacity:.92;white-space:nowrap}
+.bn-c{position:absolute;top:7px;left:43px;font-family:"Cinzel",Georgia,serif;font-size:8px;font-weight:700;opacity:.7}
+.money .b1{--c1:#4B7527;--c2:#8FB655}
+.money .b2{--c1:#46307A;--c2:#8063BA}
+.money .b5{--c1:#7C2751;--c2:#C3558A}
+.money .b10{--c1:#173F72;--c2:#3A77BF}
+.money .b20{--c1:#A1541A;--c2:#E4974A}
+.money .coin{position:relative;width:66px;height:66px;min-width:66px;border-radius:50%;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#4A3508;
+  background:radial-gradient(circle at 36% 30%,#FFF4C8 0,#E9CB6C 28%,#C9A445 58%,#A5822F 100%);
+  box-shadow:inset 0 0 0 2px #93732A,inset 0 0 0 6px rgba(255,236,170,.35),inset 0 0 0 7px rgba(120,90,25,.45),0 3px 7px -2px rgba(11,31,58,.45)}
+.money .coin::before{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(rgba(90,65,15,.4) 0 3deg,transparent 3deg 6deg);-webkit-mask:radial-gradient(circle,transparent 30px,#000 31px);mask:radial-gradient(circle,transparent 30px,#000 31px);pointer-events:none}
+.cn-v{position:relative;font-family:"Cinzel",Georgia,serif;font-weight:700;font-size:19px;line-height:1;text-shadow:0 1px 0 rgba(255,255,255,.55)}
+.cn-w{position:relative;font-family:"Cinzel",Georgia,serif;font-weight:700;font-size:7px;letter-spacing:.16em;margin-top:3px}
+.money{grid-template-columns:72px repeat(5,minmax(0,1fr))}
+.money .bn{min-height:74px}
+.money .coin{align-self:center}
+.money .bn{overflow:visible}
+.money .bn .cnt{top:-9px;right:-6px;left:auto;z-index:1}
+@media(max-width:760px){
+  .money{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .money .bn{min-height:62px;padding-right:8px}
+  .money .bn::after{width:22px;height:22px;margin-top:-11px;left:7px}
+  .bn-c{display:none}
+  .bn-v{font-size:16px}
+  .bn-w{font-size:6.5px;letter-spacing:.06em}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style></head><body>
 
@@ -578,12 +638,13 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 
     <div class="monthcard">
       <div class="m-top"><span id="mName">Este mes</span><span id="mDay"></span></div>
-      <p class="m-big"><b id="mPct">0%</b>de tu ingreso ya se gastó</p>
+      <p class="m-big"><b id="mPct">0%</b><span id="mPctLbl">de tu ingreso ya se gastó</span></p>
       <div>
         <div class="meter" role="img" id="meterBox" aria-label=""><div class="meter-fill" id="mFill" style="width:0"></div><span class="meter-today" id="mToday" style="left:0"></span></div>
-        <div class="m-legend" style="margin-top:8px"><span>Gastado</span><span>La raya es el día de hoy</span></div>
+        <div class="m-legend" style="margin-top:8px"><span id="mLegL">Gastado</span><span>La raya es el día de hoy</span></div>
       </div>
       <div class="m-status" id="mStatus"></div>
+      <a href="#adviceCard" class="m-more" id="mMore" hidden>Ver cómo mejorar ↓</a>
       <div class="m-save"><span id="mSaveLbl">Podrías ahorrar</span><b id="mSave">$0</b></div>
     </div>
   </div>
@@ -622,18 +683,24 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
         <button type="button" class="stepbtn" id="bPlus" aria-label="Sumar 500 pesos"><span aria-hidden="true">+</span><small>$500</small></button>
       </div>
       <div class="money" id="money">
-        <button type="button" class="coin c500" data-v="500" aria-label="Sumar 500 pesos"><span>$500</span><i class="cnt"></i></button>
-        <button type="button" class="bn b1" data-v="1000" aria-label="Sumar 1.000 pesos"><span>$1.000</span><i class="cnt"></i></button>
-        <button type="button" class="bn b2" data-v="2000" aria-label="Sumar 2.000 pesos"><span>$2.000</span><i class="cnt"></i></button>
-        <button type="button" class="bn b5" data-v="5000" aria-label="Sumar 5.000 pesos"><span>$5.000</span><i class="cnt"></i></button>
-        <button type="button" class="bn b10" data-v="10000" aria-label="Sumar 10.000 pesos"><span>$10.000</span><i class="cnt"></i></button>
-        <button type="button" class="bn b20" data-v="20000" aria-label="Sumar 20.000 pesos"><span>$20.000</span><i class="cnt"></i></button>
+        <button type="button" class="coin c500" data-v="500" aria-label="Sumar 500 pesos"><span class="cn-v">500</span><span class="cn-w">PESOS</span><i class="cnt"></i></button>
+        <button type="button" class="bn b1" data-v="1000" aria-label="Sumar 1.000 pesos"><span class="bn-c">1000</span><span class="bn-v"><small>$</small>1.000</span><span class="bn-w">MIL PESOS</span><i class="cnt"></i></button>
+        <button type="button" class="bn b2" data-v="2000" aria-label="Sumar 2.000 pesos"><span class="bn-c">2000</span><span class="bn-v"><small>$</small>2.000</span><span class="bn-w">DOS MIL PESOS</span><i class="cnt"></i></button>
+        <button type="button" class="bn b5" data-v="5000" aria-label="Sumar 5.000 pesos"><span class="bn-c">5000</span><span class="bn-v"><small>$</small>5.000</span><span class="bn-w">CINCO MIL PESOS</span><i class="cnt"></i></button>
+        <button type="button" class="bn b10" data-v="10000" aria-label="Sumar 10.000 pesos"><span class="bn-c">10000</span><span class="bn-v"><small>$</small>10.000</span><span class="bn-w">DIEZ MIL PESOS</span><i class="cnt"></i></button>
+        <button type="button" class="bn b20" data-v="20000" aria-label="Sumar 20.000 pesos"><span class="bn-c">20000</span><span class="bn-v"><small>$</small>20.000</span><span class="bn-w">VEINTE MIL PESOS</span><i class="cnt"></i></button>
       </div>
       <div class="bills-step"><span class="step-lbl">¿En qué fue?</span><div class="chips" id="bCats"></div></div>
       <div class="bills-save"><input id="bDesc" placeholder="Detalle (opcional). Si es de alguien, nómbralo" aria-label="Detalle del gasto" autocomplete="off"><button type="button" id="bSave" class="btn big" disabled>Guardar</button></div>
     </div>
 
     <div id="result" aria-live="polite"></div><div id="ask"></div>
+  </div>
+
+  <div class="card advice" id="adviceCard" hidden>
+    <div class="adv-head"><span class="adv-ic" id="advIc" aria-hidden="true"></span><div><h2 id="advTitle">Tu meta de ahorro</h2><p id="advHead"></p></div></div>
+    <ul class="adv-tips" id="advTips"></ul>
+    <div class="adv-actions" id="advActions"></div>
   </div>
 
   <div class="grid2">
@@ -775,29 +842,90 @@ function renderCharts(){
  var general=sumOf(function(m){return !m.who&&named.indexOf(m.folder)<0});
  $("personChart").innerHTML=list.length?list.map(function(x){return '<div class="member">'+avatar(x.n)+'<div><b>'+esc(x.n)+'</b><small>'+x.role+'</small><strong>'+cash(x.v)+'</strong></div></div>'}).join("")+'<div class="member"><span class="av" style="background:#5A6A7C" aria-hidden="true">'+SVG_OPEN.replace('aria-hidden="true">','aria-hidden="true" width="20" height="20">')+'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></span><div><b>General</b><small>Sin nombrar a nadie</small><strong>'+cash(general)+'</strong></div></div>':'<div class="empty"><b>Aún no agregas a tu familia</b>Toca “Editar mi hogar” para sumar personas, mascotas o empresas.</div>';
 }
-function renderHome(total,ants,left){
+/* Plan del mes: cuánto puedes gastar para cumplir tu meta y cómo vas */
+var FIXED_CATS=["Gastos del hogar","Créditos","Universidad","Salud"];
+function monthPlan(mm,total){
  var now=new Date(),dim=new Date(now.getFullYear(),now.getMonth()+1,0).getDate(),day=now.getDate();
- var dt=DAYS[now.getDay()]+" "+day+" de "+MONTHS[now.getMonth()];$("todayTxt").textContent=dt.charAt(0).toUpperCase()+dt.slice(1);
+ var inc=Number(state.income)||0,pct=state.saveMode==="percent"?(Number(state.savePercent)||0):0;
+ var goal=inc*pct/100,budget=inc-goal,byCat={},fixed=0;
+ mm.forEach(function(m){var v=Number(m.amount||0);byCat[m.folder]=(byCat[m.folder]||0)+v;if(FIXED_CATS.indexOf(m.folder)>=0||(state.businesses||[]).indexOf(m.folder)>=0)fixed+=v});
+ var variable=total-fixed,projected=fixed+(day?variable/day*dim:variable);
+ var level;
+ if(!inc)level="none";
+ else if(state.saveMode==="percent")level=total>budget?"bad":(projected>budget*1.02?"warn":"ok");
+ else level=total>inc?"bad":(projected>=inc?"warn":"ok");
+ return {day:day,dim:dim,daysLeft:dim-day+1,inc:inc,pct:pct,goal:goal,budget:budget,remaining:budget-total,projected:Math.round(projected),total:total,byCat:byCat,level:level};
+}
+function renderHome(total,ants,left,p){
+ var now=new Date();
+ var dt=DAYS[now.getDay()]+" "+p.day+" de "+MONTHS[now.getMonth()];$("todayTxt").textContent=dt.charAt(0).toUpperCase()+dt.slice(1);
  $("available").textContent=cash(left);
  $("billLabel").textContent="Disponible en "+MONTHS[now.getMonth()];
  $("bill").classList.toggle("over",left<0);
  $("billNote").hidden=!(left<0);$("billNote").textContent=left<0?"Te pasaste de tus ingresos este mes.":"";
  $("mName").textContent=MONTHS[now.getMonth()]+" "+now.getFullYear();
- $("mDay").textContent="Día "+day+" de "+dim;
- var spent=state.income?total/state.income*100:0,dayPct=day/dim*100;
+ $("mDay").textContent="Día "+p.day+" de "+p.dim;
+ var pctMode=state.saveMode==="percent"&&p.pct>0;
+ var base=pctMode?p.budget:p.inc,spent=base>0?total/base*100:0,dayPct=p.day/p.dim*100;
  $("mPct").textContent=Math.round(spent)+"%";
+ $("mPctLbl").textContent=pctMode?"de lo que puedes gastar para ahorrar tu "+p.pct+"%":"de tu ingreso ya se gastó";
+ $("mLegL").textContent=pctMode?"Puedes gastar "+cash(p.budget):"Ingreso "+cash(p.inc);
  $("mFill").style.width=Math.min(100,spent)+"%";
- $("mFill").classList.toggle("over",spent>dayPct+5);
+ $("mFill").classList.toggle("over",p.level==="warn"||p.level==="bad");
  $("mToday").style.left=dayPct+"%";
- $("meterBox").setAttribute("aria-label","Gastado "+Math.round(spent)+"% del ingreso; el mes va en "+Math.round(dayPct)+"%");
- var st=$("mStatus"),warn=false,msg;
- if(!state.income){msg="Agrega tu ingreso en Editar mi hogar para ver cómo vas.";warn=true}
- else if(spent>100){msg="Ya gastaste más de lo que entra al mes.";warn=true}
- else if(spent>dayPct+5){msg="Vas gastando más rápido de lo que avanza el mes.";warn=true}
- else{msg="Vas bien: gastas más lento de lo que avanza el mes."}
- st.className="m-status"+(warn?" warn":"");st.innerHTML=(warn?ICON_WARN:ICON_OK)+"<span>"+msg+"</span>";
- if(state.saveMode==="percent"){$("mSaveLbl").textContent="Tu meta de ahorro ("+(state.savePercent||0)+"%)";$("mSave").textContent=cash(state.income*(state.savePercent||0)/100)}
- else{$("mSaveLbl").textContent="Si sigues así, ahorras";$("mSave").textContent=cash(Math.max(0,left))}
+ $("meterBox").setAttribute("aria-label","Gastado "+Math.round(spent)+"%; el mes va en "+Math.round(dayPct)+"%");
+ var msg,warn=p.level!=="ok";
+ if(p.level==="none")msg="Agrega tu ingreso en Mi hogar para ver cómo vas.";
+ else if(pctMode)msg={bad:"Ya gastaste más de lo que permite tu meta.",warn:"A este ritmo no alcanzas tu meta de ahorro.",ok:"Vas bien para ahorrar tu "+p.pct+"%."}[p.level];
+ else msg={bad:"Ya gastaste más de lo que entra al mes.",warn:"A este ritmo no te quedará para ahorrar.",ok:"Vas bien: gastas más lento de lo que avanza el mes."}[p.level];
+ var st=$("mStatus");st.className="m-status"+(warn?" warn":"");st.innerHTML=(warn?ICON_WARN:ICON_OK)+"<span>"+msg+"</span>";
+ $("mMore").hidden=!(p.level==="warn"||p.level==="bad");
+ if(state.saveMode==="percent"){$("mSaveLbl").textContent="Tu meta de ahorro ("+(state.savePercent||0)+"%)";$("mSave").textContent=cash(p.goal)}
+ else{$("mSaveLbl").textContent="Si sigues así, ahorras";$("mSave").textContent=cash(Math.max(0,p.inc-p.projected))}
+}
+/* Consejos con tus números */
+var ICON_BULB='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>';
+var ICON_ALERT='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/></svg>';
+function buildAdvice(p){
+ if(p.level==="none")return null;
+ var head,tips=[],acts=[],perDay=Math.floor(Math.max(0,p.remaining)/p.daysLeft/100)*100;
+ if(state.saveMode==="percent"&&p.pct>0){
+   if(p.level==="bad"){head="Ya gastaste <b>"+cash(-p.remaining)+"</b> más de lo que permite tu meta de ahorrar "+p.pct+"% ("+cash(p.goal)+").";
+     tips.push("Hasta fin de mes, trata de gastar solo en lo necesario: cuentas, comida de la casa y transporte.")}
+   else if(p.level==="warn"){head="A este ritmo terminarías el mes gastando unos <b>"+cash(p.projected)+"</b>, "+cash(p.projected-p.budget)+" más de lo que tu meta permite.";
+     tips.push("Para ahorrar tu "+p.pct+"% ("+cash(p.goal)+"), te quedan "+cash(p.remaining)+" para los "+p.daysLeft+" días que faltan: unos <b>"+cash(perDay)+" al día</b>.")}
+   else{head="Vas bien: a este ritmo cumples tu meta de ahorrar "+p.pct+"% ("+cash(p.goal)+").";
+     tips.push("Te quedan "+cash(p.remaining)+" para gastar este mes: unos <b>"+cash(perDay)+" al día</b>.")}
+ }else{
+   var projSave=p.inc-p.projected;
+   if(projSave<=0)head="A este ritmo no te va a quedar nada para ahorrar este mes.";
+   else head="Si sigues así, a fin de mes te quedarían unos <b>"+cash(projSave)+"</b> ("+Math.round(projSave/p.inc*100)+"% de tu ingreso).";
+   tips.push("Ponerte una meta fija ayuda a no gastarlo: aparta ese monto apenas te paguen.");
+   var sug=projSave>0?Math.max(5,Math.min(30,Math.floor(projSave/p.inc*100/5)*5)):5;
+   acts.push({label:"Ahorrar un "+sug+"% fijo",pct:sug});
+ }
+ if(p.level==="warn"||p.level==="bad"){
+   var h=p.byCat["Hormiguitas"]||0;
+   if(h>=5000)tips.push("Tus hormiguitas ya suman "+cash(h)+" este mes. Si las bajas a la mitad, recuperas <b>"+cash(h/2)+"</b>.");
+   var named=state.people.concat(state.pets).concat(state.businesses||[]);
+   var vars=Object.keys(p.byCat).filter(function(k){return k!=="Hormiguitas"&&FIXED_CATS.indexOf(k)<0&&named.indexOf(k)<0}).sort(function(a,b){return p.byCat[b]-p.byCat[a]});
+   if(vars.length){var k=vars[0],v=p.byCat[k];tips.push("De lo que puedes controlar, lo que más pesa es <b>"+esc(k)+"</b>: "+cash(v)+" ("+Math.round(v/p.total*100)+"% de tus gastos). Bajarlo un 20% son "+cash(v*.2)+".")}
+   if(state.saveMode==="percent"&&p.pct>0){var ach=Math.floor((p.inc-Math.max(p.projected,p.total))/p.inc*100);if(ach>=1&&ach<p.pct)acts.push({label:"Ajustar mi meta a "+ach+"% este mes",pct:ach})}
+ }
+ return {head:head,tips:tips.slice(0,3),acts:acts};
+}
+function renderAdvice(p){
+ var a=buildAdvice(p),card=$("adviceCard");
+ if(!a){card.hidden=true;$("saveStatus").className="notice";$("saveStatus").innerHTML="Agrega tu ingreso en Mi hogar para ver cómo vas.";return}
+ card.hidden=false;card.className="card advice "+p.level;
+ $("advIc").innerHTML=p.level==="ok"?ICON_BULB:ICON_ALERT;
+ $("advTitle").textContent=state.saveMode==="percent"&&p.pct>0?"Tu meta: ahorrar "+p.pct+"% este mes":"Tu ahorro este mes";
+ $("advHead").innerHTML=a.head;
+ var li=a.tips.map(function(t){return "<li>"+t+"</li>"}).join("");
+ $("advTips").innerHTML=li;
+ $("advActions").innerHTML=a.acts.map(function(x){return '<button type="button" class="btn light tiny" data-pct="'+x.pct+'">'+x.label+'</button>'}).join("");
+ $("advActions").querySelectorAll("[data-pct]").forEach(function(b){b.onclick=function(){state.saveMode="percent";state.savePercent=Number(b.dataset.pct);save();render();$("adviceCard").scrollIntoView({block:"center"})}});
+ $("saveStatus").className="notice "+p.level;$("saveStatus").innerHTML="<div>"+a.head+"</div><ul class='adv-tips'>"+li+"</ul>";
 }
 function render(){
  ensurePeople();
@@ -810,7 +938,7 @@ function render(){
  var phrases=["¿Qué deseas ahorrar hoy, {n}?","Contemos cuánto gastamos hoy, {n}.","Veamos cómo van tus lucas hoy, {n}.","Cada luca cuenta, {n}."];
  $("phrase").textContent=phrases[new Date().getDate()%phrases.length].replace(", {n}",state.name?", "+state.name:"");
  $("people").innerHTML=state.people.map(function(n){return '<span class="person">Persona · <b>'+esc(n)+'</b></span>'}).join("");
- renderHome(total,ants,left);renderCharts();renderBillCats();renderExamples();
+ var plan=monthPlan(mm,total);renderHome(total,ants,left,plan);renderCharts();renderBillCats();renderExamples();
  $("history").innerHTML=state.moves.length?state.moves.map(function(x){return '<div class="item"><span>'+esc(x.text)+(x.photo?' <span class="pill">Con boleta</span>':'')+'</span><span class="folderCell"><span class="pill">'+esc(x.folder)+'</span></span><b>'+cash(x.amount)+'</b><span><button class="btn tiny light" onclick="editMove('+x.id+')">Editar</button> <button class="btn tiny danger" onclick="delMove('+x.id+')">Eliminar</button></span></div>'}).join(""):'<p class="muted">Aún no hay movimientos.</p>';
  $("folderGrid").innerHTML=state.folders.map(function(f){var list=state.moves.filter(function(x){return inFolder(x,f.name)}),sum=list.reduce(function(a,x){return a+x.amount},0);return '<button type="button" class="folder" data-f="'+encodeURIComponent(f.name)+'">'+iconFor(f)+'<b>'+esc(f.name)+'</b><small>'+list.length+(list.length===1?' gasto':' gastos')+' · '+cash(sum)+'</small></button>'}).join("");
  document.querySelectorAll(".folder").forEach(function(el){el.onclick=function(){openFolder(decodeURIComponent(el.dataset.f))}});
@@ -820,6 +948,7 @@ function render(){
  var diff=left-target;
  $("saveStatus").innerHTML=state.saveMode==="percent"?(diff>=0?"Vas <b>"+cash(diff)+" sobre tu meta</b>.":"Te faltan <b>"+cash(Math.abs(diff))+"</b> para proteger tu meta."):"Hoy podrías ahorrar <b>"+cash(Math.max(0,left))+"</b>.";
  $("saveBar").style.width=(state.income?Math.min(100,Math.max(0,left)/state.income*100):0)+"%";
+ renderAdvice(plan);
 }
 function updatePhotoPreview(){
  var el=$("photoPreview");if(!el)return;
