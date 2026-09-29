@@ -294,7 +294,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 @media(max-width:760px){
   .top{padding:10px 16px}
   .brand small{display:none}
-  nav{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border-top:1px solid var(--line);border-radius:0;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px -18px rgba(11,31,58,.5)}
+  nav{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#fff;border-top:1px solid var(--line);border-radius:0;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 24px -18px rgba(11,31,58,.5)}
   .tab{flex-direction:column;gap:3px;font-size:12px;padding:6px 2px;color:var(--muted);min-height:54px;justify-content:center}
   .tab svg{width:22px;height:22px}
   .tab:hover{background:transparent;color:var(--ink)}
@@ -520,6 +520,77 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 }
 .ob-what{margin:-6px 0 20px;color:#C9D6E3;font-size:18px;line-height:1.45;max-width:34ch}
 @media(max-width:860px){.ob-what{margin:8px 0 0;font-size:15px;max-width:none}}
+
+/* Mi hogar */
+.kv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.kv div{background:var(--mint-2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;min-width:0}
+.kv small{color:var(--muted);font-size:13px;font-weight:600}
+.kv b{font-family:var(--font-d);font-size:17px;overflow-wrap:anywhere}
+.hgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:12px}
+.hgrid .card{margin-bottom:0;display:flex;flex-direction:column;gap:10px}
+.hgroup h2{margin:0}
+.hgroup>.muted{margin:-4px 0 0}
+.hgroup .tags{margin:0}
+.hgroup .tags:empty{display:none}
+.hgroup .adder{margin-top:auto}
+/* Misiones */
+.missions{display:flex;flex-direction:column;gap:12px}
+.mission{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--mint-2);display:flex;flex-direction:column;gap:10px}
+.mission.done{background:#E9F8F0;border-color:#A7E3C4}
+.ms-top{display:flex;align-items:center;gap:12px}
+.m-ic{width:44px;height:44px;border-radius:14px;background:var(--navy);color:var(--green);display:grid;place-items:center;flex-shrink:0}
+.m-ic svg{width:22px;height:22px}
+.m-name{flex:1;min-width:0;display:flex;flex-direction:column}
+.m-name b{font-family:var(--font-d);font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.m-name small{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.m-bar{height:10px}
+.m-line{margin:0;font-size:15px;color:var(--ink-2)}
+.m-line b{color:var(--ink)}
+.m-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.m-abono{display:flex;gap:6px;align-items:center;flex:1 1 240px}
+.m-abono .affix{flex:1;min-width:0}
+.m-abono input{min-height:40px;font-size:16px}
+.m-confirm{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-weight:600}
+.fit{display:inline-flex;align-items:center;font-size:12px;font-weight:700;border-radius:999px;padding:3px 9px;white-space:nowrap}
+.fit.ok{background:var(--ok-bg,#DFF5EA);color:#0B6343}
+.fit.warn{background:var(--warn-bg);color:var(--warn-ink)}
+.fit.bad{background:var(--danger-bg);color:var(--danger)}
+.m-cta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.m-cta>div{flex:1 1 280px}
+.m-cta h2{margin:0 0 4px}
+.m-cta p{margin:0;color:var(--ink-2)}
+.m-cta .m-ic{width:52px;height:52px;border-radius:16px}
+/* Hoja de diálogo */
+.sheet{position:fixed;inset:0;z-index:30;background:rgba(11,31,58,.55);display:flex;align-items:center;justify-content:center;padding:20px}
+.sheet[hidden]{display:none!important}
+.sheet-box{background:#fff;border-radius:22px;width:min(640px,100%);max-height:calc(100vh - 40px);overflow:auto;padding:24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.sheet-head h2{font-size:22px;margin:0}
+.icon-x{width:40px;height:40px;border-radius:50%;border:0;background:var(--mint-2);font-size:22px;cursor:pointer;color:var(--ink-2)}
+#mdChips{margin-top:8px}
+.m-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:10px 0}
+.m-opt{text-align:left;border:1.5px solid var(--line-2);background:#fff;border-radius:14px;padding:12px;cursor:pointer;display:flex;flex-direction:column;gap:2px;align-items:flex-start}
+.m-opt small{color:var(--muted);font-weight:700;font-size:13px}
+.m-opt b{font-family:var(--font-d);font-size:19px;font-variant-numeric:tabular-nums}
+.m-opt span{color:var(--muted);font-size:13px;margin-bottom:6px}
+.m-opt.mine{border-style:dashed}
+.m-opt.on{border-color:var(--green);background:var(--mint-2);box-shadow:inset 0 0 0 1px var(--green)}
+.md-cap{margin:0 0 12px;font-size:15px;color:var(--ink-2)}
+.md-custom{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border:1px dashed var(--line-2);border-radius:14px}
+.md-custom input[type=range]{width:100%;min-height:0;padding:0;border:0;accent-color:var(--green)}
+.md-or{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+.md-or .affix{flex:1 1 160px}
+.md-or input{min-height:42px}
+.md-summary{margin:14px 0 4px;font-size:16px;color:var(--ink)}
+.lbl-row{margin-top:4px}
+@media(max-width:760px){
+  .kv{grid-template-columns:minmax(0,1fr)}
+  .hgrid{grid-template-columns:minmax(0,1fr)}
+  .tab{font-size:11px;padding:6px 0}
+  .sheet{align-items:flex-end;padding:0}
+  .sheet-box{border-radius:22px 22px 0 0;max-height:92vh;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px))}
+  .m-opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style></head><body>
 
@@ -618,6 +689,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
     <button class="tab" data-page="moves"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12"/><path d="M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Movimientos</span></button>
     <button class="tab" data-page="folders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg><span>Carpetas</span></button>
     <button class="tab" data-page="savings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span>Ahorros</span></button>
+    <button class="tab" data-page="hogar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c2 .7 3.2 2.5 3.6 5.2"/></svg><span>Mi hogar</span></button>
   </nav>
 </div></header>
 
@@ -721,6 +793,8 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
     </div>
   </div>
 
+  <div class="card missions-home" id="missionsHome"></div>
+
   <div class="card" id="homeCard">
     <div class="card-head"><h2>Tu hogar este mes</h2><div style="display:flex;gap:8px"><button type="button" id="addMember" class="btn light tiny">+ Agregar</button><button id="editHome" class="btn ghost tiny">Editar</button></div></div>
     <div id="personChart" class="hh"></div>
@@ -744,8 +818,50 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 <section id="savings" class="page">
   <div class="hero"><div class="hero-main"><div><span class="eyebrow">Ahorro</span><h1>Lo que puedes guardar</h1><p id="savingText"></p></div><div class="heroR"><small>Ahorro potencial</small><b id="potential">$0</b></div></div></div>
   <div class="grid2"><div class="card"><h2>Meta mensual</h2><b id="target">$0</b><div class="progress" style="margin-top:14px"><div id="saveBar" class="fill"></div></div></div><div class="card"><h2>Estado</h2><div id="saveStatus" class="notice"></div></div></div>
+  <div class="card" style="margin-top:16px">
+    <div class="card-head"><div><h2>Misiones de ahorro</h2><p class="muted" id="missionsMonth" style="margin:4px 0 0"></p></div><button type="button" class="btn" data-newmission><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>Nueva misión</button></div>
+    <p class="muted" id="missionsMsg" aria-live="polite" style="margin:0 0 10px"></p>
+    <div id="missionsList" class="missions"></div>
+  </div>
+</section>
+
+<section id="hogar" class="page">
+  <div class="hero"><div class="hero-main"><div><span class="eyebrow">Tu configuración</span><h1>Mi hogar</h1><p>Agrega o quita personas, mascotas y empresas cuando quieras.</p></div></div></div>
+  <div class="card">
+    <div class="card-head"><h2>Tus datos</h2><button type="button" id="editData" class="btn light tiny">Editar</button></div>
+    <div class="kv" id="myData"></div>
+  </div>
+  <div class="hgrid">
+    <div class="card hgroup"><h2>Personas</h2><p class="muted">Con quienes compartes gastos. Tú quedas incluido.</p><div class="tags" id="h-people"></div><div class="adder"><input id="h-add-people" placeholder="Ej: Rebeca" aria-label="Nombre de la persona" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-hadd="people">Agregar</button></div></div>
+    <div class="card hgroup"><h2>Mascotas</h2><p class="muted">Para ver cuánto se gasta en cada una.</p><div class="tags" id="h-pets"></div><div class="adder"><input id="h-add-pets" placeholder="Ej: Vasco" aria-label="Nombre de la mascota" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-hadd="pets">Agregar</button></div></div>
+    <div class="card hgroup"><h2>Empresas</h2><p class="muted">Si llevas los gastos de un negocio aparte.</p><div class="tags" id="h-businesses"></div><div class="adder"><input id="h-add-businesses" placeholder="Ej: Covalso" aria-label="Nombre de la empresa" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-hadd="businesses">Agregar</button></div></div>
+  </div>
+  <p class="muted" id="h-msg" aria-live="polite">Para anotar un gasto de alguien, nómbralo al escribirlo: “comida de Vasco 20 lucas”.</p>
 </section>
 </main>
+<div class="sheet" id="missionDlg" hidden><div class="sheet-box" role="dialog" aria-modal="true" aria-labelledby="mdTitle">
+  <div class="sheet-head"><h2 id="mdTitle">Misión: ahorrar para…</h2><button type="button" class="icon-x" id="mdClose" aria-label="Cerrar">×</button></div>
+  <div class="field"><label for="mdName">¿Para qué quieres ahorrar?</label><input id="mdName" placeholder="Ej: viaje a Brasil" autocomplete="off">
+    <div class="chips" id="mdChips"><button type="button" class="ex" data-mname="Un auto">Un auto</button><button type="button" class="ex" data-mname="Un viaje">Un viaje</button><button type="button" class="ex" data-mname="El pie de una casa">El pie de una casa</button><button type="button" class="ex" data-mname="Estudios">Estudios</button><button type="button" class="ex" data-mname="Un celular nuevo">Un celular nuevo</button><button type="button" class="ex" data-mname="Fondo de emergencia">Fondo de emergencia</button></div></div>
+  <div class="row">
+    <div class="field"><label for="mdCost">¿Cuánto cuesta?</label><div class="affix"><span aria-hidden="true">$</span><input id="mdCost" inputmode="text" placeholder="8.000.000" autocomplete="off"></div><p class="help" id="mdCostHelp"></p></div>
+    <div class="field"><label for="mdHave">¿Cuánto tienes ya? <span class="muted">(opcional)</span></label><div class="affix"><span aria-hidden="true">$</span><input id="mdHave" inputmode="text" placeholder="0" autocomplete="off"></div><p class="help" id="mdHaveHelp"></p></div>
+  </div>
+  <div id="mdPlans" hidden>
+    <div class="lbl-row"><span class="step-lbl">Elige tu plan: más rápido es más plata al mes</span></div>
+    <div class="m-opts" id="mdOpts"></div>
+    <p class="md-cap" id="mdCap"></p>
+    <div class="md-custom">
+      <label for="mdRange" class="step-lbl">O ajusta el plazo</label>
+      <input type="range" id="mdRange" min="1" max="60" step="1" value="12">
+      <div class="md-or"><label for="mdMonthly">o dime cuánto puedes apartar al mes</label><div class="affix"><span aria-hidden="true">$</span><input id="mdMonthly" inputmode="text" placeholder="200.000" autocomplete="off"></div></div>
+    </div>
+    <p class="md-summary" id="mdSummary"></p>
+  </div>
+  <p class="ob-err" id="mdErr" role="alert"></p>
+  <div class="ob-actions"><button type="button" class="btn big" id="mdSave">Crear misión</button></div>
+</div></div>
+
 
 <script>
 (function(){
@@ -761,7 +877,7 @@ var baseFolders=[
 {name:"Otros",keys:[],icon:"…"}];
 var state={configured:false,name:"",income:0,saveMode:"rest",savePercent:0,people:[],pets:[],businesses:[],folders:baseFolders,moves:[],seq:1};
 try{var old=JSON.parse(localStorage.getItem(KEY));if(old)state=old}catch(e){}
-if(!state.folders)state.folders=baseFolders;if(!state.moves)state.moves=[];if(!state.people)state.people=[];if(!state.pets)state.pets=[];if(!state.businesses)state.businesses=[];
+if(!state.missions)state.missions=[];if(!state.folders)state.folders=baseFolders;if(!state.moves)state.moves=[];if(!state.people)state.people=[];if(!state.pets)state.pets=[];if(!state.businesses)state.businesses=[];
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
@@ -869,7 +985,8 @@ function renderHome(total,ants,left,p){
  $("available").textContent=cash(left);
  $("billLabel").textContent="Disponible en "+MONTHS[now.getMonth()];
  $("bill").classList.toggle("over",left<0);
- $("billNote").hidden=!(left<0);$("billNote").textContent=left<0?"Te pasaste de tus ingresos este mes.":"";
+ var mt=missionsMonthTotal();
+ $("billNote").hidden=!(left<0||mt>0);$("billNote").textContent=left<0?"Te pasaste de tus ingresos este mes.":(mt>0?"Ya descontamos "+cash(mt)+" que apartaste para tus misiones.":"");
  $("mName").textContent=MONTHS[now.getMonth()]+" "+now.getFullYear();
  $("mDay").textContent="Día "+p.day+" de "+p.dim;
  var pctMode=state.saveMode==="percent"&&p.pct>0;
@@ -939,13 +1056,13 @@ function render(){
  var mm=monthMoves();
  var total=mm.reduce(function(a,x){return a+Number(x.amount||0)},0),
      ants=mm.filter(function(x){return x.folder==="Hormiguitas"}).reduce(function(a,x){return a+Number(x.amount||0)},0),
-     left=state.income-total;
+     left=state.income-total-missionsMonthTotal();
  $("income").textContent=cash(state.income);$("expenses").textContent=cash(total);$("ants").textContent=cash(ants);
  $("hello").textContent=state.name?"Hola, "+state.name:"Hola";
  var phrases=["¿Qué deseas ahorrar hoy, {n}?","Contemos cuánto gastamos hoy, {n}.","Veamos cómo van tus lucas hoy, {n}.","Cada luca cuenta, {n}."];
  $("phrase").textContent=phrases[new Date().getDate()%phrases.length].replace(", {n}",state.name?", "+state.name:"");
  $("people").innerHTML=state.people.map(function(n){return '<span class="person">Persona · <b>'+esc(n)+'</b></span>'}).join("");
- var plan=monthPlan(mm,total);renderHome(total,ants,left,plan);renderCharts();renderBillCats();renderExamples();
+ var plan=monthPlan(mm,total);lastPlan=plan;renderHome(total,ants,left,plan);renderCharts();renderBillCats();renderExamples();renderHogar();renderMissions();
  $("history").innerHTML=state.moves.length?state.moves.map(function(x){return '<div class="item"><span>'+esc(x.text)+(x.photo?' <span class="pill">Con boleta</span>':'')+'</span><span class="folderCell"><span class="pill">'+esc(x.folder)+'</span></span><b>'+cash(x.amount)+'</b><span><button class="btn tiny light" onclick="editMove('+x.id+')">Editar</button> <button class="btn tiny danger" onclick="delMove('+x.id+')">Eliminar</button></span></div>'}).join(""):'<p class="muted">Aún no hay movimientos.</p>';
  $("folderGrid").innerHTML=state.folders.map(function(f){var list=state.moves.filter(function(x){return inFolder(x,f.name)}),sum=list.reduce(function(a,x){return a+x.amount},0);return '<button type="button" class="folder" data-f="'+encodeURIComponent(f.name)+'">'+iconFor(f)+'<b>'+esc(f.name)+'</b><small>'+list.length+(list.length===1?' gasto':' gastos')+' · '+cash(sum)+'</small></button>'}).join("");
  document.querySelectorAll(".folder").forEach(function(el){el.onclick=function(){openFolder(decodeURIComponent(el.dataset.f))}});
@@ -1203,6 +1320,176 @@ $("bSave").onclick=function(){
  billAmt=0;counts={};bCat="";$("bDesc").value="";renderBills();renderBillCats();
 };
 
+/* ---------- Mi hogar (pestaña) ---------- */
+var H_KINDS={people:"persona",pets:"mascota",businesses:"empresa"};
+function renderHogar(){
+ var mode=state.saveMode==="percent"&&state.savePercent>0?"Un "+state.savePercent+"% de tus ingresos ("+cash(state.income*state.savePercent/100)+" al mes)":"Lo que quede a fin de mes";
+ $("myData").innerHTML='<div><small>Nombre</small><b>'+esc(state.name||"—")+'</b></div><div><small>Ingreso mensual</small><b>'+cash(state.income)+'</b></div><div><small>Cómo ahorras</small><b>'+esc(mode)+'</b></div>';
+ ["people","pets","businesses"].forEach(function(k){
+   var list=(state[k]||[]),html="";
+   list.forEach(function(n,i){
+     if(k==="people"&&isMe(n)){html+='<span class="tag me">'+avatar(n)+esc(n)+'<small>tú</small></span>';return}
+     html+='<span class="tag">'+avatar(n)+esc(n)+'<button type="button" class="x" data-hdel="'+k+'" data-i="'+i+'" aria-label="Quitar a '+esc(n)+'">×</button></span>';
+   });
+   $("h-"+k).innerHTML=html||'<span class="muted">Nadie todavía.</span>';
+ });
+}
+function hogarAdd(k){
+ var inp=$("h-add-"+k),names=String(inp.value||"").split(",").map(cleanName).filter(Boolean);
+ if(!names.length){inp.focus();return}
+ var all=members().concat(state.name?[state.name]:[]);
+ names.forEach(function(n){if(all.some(function(x){return norm(x)===norm(n)}))return;state[k].push(n);all.push(n)});
+ if(k==="people"&&state.name&&state.people.some(function(n){return !isMe(n)})&&!state.people.some(isMe))state.people.unshift(state.name);
+ inp.value="";save();render();inp.focus();
+ $("h-msg").textContent="Listo. Para anotarle un gasto, nómbralo al escribirlo: “"+(k==="businesses"?"bencina "+names[0]+" 30 lucas":"comida de "+names[0]+" 20 lucas")+"”.";
+}
+function hogarDel(k,i){
+ var n=state[k][i];if(n==null)return;
+ state[k].splice(i,1);
+ if(k==="people"&&!state.people.some(function(x){return !isMe(x)}))state.people=[];
+ if(!state.moves.some(function(m){return m.folder===n}))state.folders=state.folders.filter(function(f){return f.name!==n});
+ save();render();
+ $("h-msg").textContent="Quitaste a "+n+". Sus gastos anteriores se mantienen.";
+}
+["people","pets","businesses"].forEach(function(k){
+ $("h-add-"+k).onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();hogarAdd(k)}};
+});
+document.querySelectorAll("[data-hadd]").forEach(function(b){b.onclick=function(){hogarAdd(b.dataset.hadd)}});
+$("hogar").addEventListener("click",function(e){var x=e.target.closest("[data-hdel]");if(x)hogarDel(x.dataset.hdel,+x.dataset.i)});
+$("editData").onclick=function(){showSetup(1)};
+
+/* ---------- Misiones de ahorro ---------- */
+var lastPlan=null;
+var MISSION_ICONS={
+ auto:'<path d="M3 16v-3l2-5h14l2 5v3z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/>',
+ viaje:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
+ casa:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/>',
+ estudios:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+ tech:'<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+ emergencia:'<path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/>',
+ meta:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>'
+};
+function missionKind(name){var n=norm(name);
+ if(/\b(auto|carro|moto|camioneta|vehiculo|bici)/.test(n))return "auto";
+ if(/\b(viaje|vacaciones|pasaje|playa|europa|brasil|argentina|peru|mexico|viajar)/.test(n))return "viaje";
+ if(/\b(casa|depto|departamento|pie|mueble|living|cocina)/.test(n))return "casa";
+ if(/\b(estudio|universidad|curso|magister|diplomado|colegio|matricula)/.test(n))return "estudios";
+ if(/\b(celular|iphone|computador|notebook|tele|televisor|consola|play|tablet)/.test(n))return "tech";
+ if(/\b(emergencia|imprevisto|colchon|fondo)/.test(n))return "emergencia";
+ return "meta";
+}
+function mIcon(kind){return '<span class="m-ic">'+SVG_OPEN+(MISSION_ICONS[kind]||MISSION_ICONS.meta)+'</svg></span>'}
+function parseMoney(str){var t=wordsToDigits(String(str||"").trim()).toLowerCase();if(!t)return 0;var a=findAmts(t);return a.length?a[0].value:0}
+function addMonthsLabel(start,months){var p=String(start).split("-"),d=new Date(+p[0],+p[1]-1+months,1);return MONTHS[d.getMonth()]+" "+d.getFullYear()}
+function monthsSince(start){var p=String(start).split("-"),n=new Date();return (n.getFullYear()-p[0])*12+(n.getMonth()-(p[1]-1))}
+function mSaved(m){return (m.initial||0)+(m.contribs||[]).reduce(function(a,c){return a+c.amount},0)}
+function mMonthContrib(m){var k=monthKey();return (m.contribs||[]).filter(function(c){return String(c.date).slice(0,7)===k}).reduce(function(a,c){return a+c.amount},0)}
+function missionsMonthTotal(){return (state.missions||[]).reduce(function(a,m){return a+mMonthContrib(m)},0)}
+function roundUp100(v){return Math.ceil(v/100)*100}
+/* Cuánto puedes apartar al mes para misiones: tu meta de ahorro, o lo que te sobra a este ritmo */
+function saveCapacity(exceptId){
+ var p=lastPlan;if(!p||!p.inc)return 0;
+ var base=state.saveMode==="percent"&&p.pct>0?p.goal:Math.max(0,p.inc-p.projected);
+ var others=(state.missions||[]).filter(function(m){return m.id!==exceptId&&mSaved(m)<m.cost}).reduce(function(a,m){return a+(m.monthly||0)},0);
+ return Math.max(0,Math.round(base-others));
+}
+function fitTag(monthly,cap){
+ if(!cap)return "";
+ if(monthly<=cap)return '<span class="fit ok">Te alcanza</span>';
+ if(monthly<=cap*1.5)return '<span class="fit warn">Exigente</span>';
+ return '<span class="fit bad">Muy exigente</span>';
+}
+function missionCard(m,compact){
+ var saved=mSaved(m),pct=m.cost?Math.min(100,Math.round(saved/m.cost*100)):0,rem=Math.max(0,m.cost-saved),done=saved>=m.cost;
+ var expected=(m.base!=null?m.base:(m.initial||0))+(m.monthly||0)*monthsSince(m.start),behind=Math.round(expected-saved);
+ var thisMonth=mMonthContrib(m),dueNow=Math.max(0,(m.monthly||0)-thisMonth);
+ var status=done?'<span class="fit ok">¡Misión cumplida!</span>':(behind>0?'<span class="fit warn">Atrasada '+cash(behind)+'</span>':'<span class="fit ok">Al día</span>');
+ var line=done?"Juntaste "+cash(saved)+". ¡Lo lograste!":"Aparta <b>"+cash(m.monthly)+" al mes</b> · lo logras en "+addMonthsLabel(m.start,m.months)+(dueNow&&!done?" · este mes te faltan "+cash(dueNow):"");
+ return '<div class="mission'+(done?' done':'')+'" data-mid="'+m.id+'">'+
+  '<div class="ms-top">'+mIcon(m.kind)+'<div class="m-name"><b>'+esc(m.name)+'</b><small>'+cash(saved)+' de '+cash(m.cost)+' · '+pct+'%</small></div>'+status+'</div>'+
+  '<div class="progress m-bar"><div class="fill" style="width:'+pct+'%"></div></div>'+
+  '<p class="m-line">'+line+'</p>'+
+  (compact?'':'<div class="m-actions">'+(done?'':'<div class="m-abono"><div class="affix"><span aria-hidden="true">$</span><input class="m-amt" inputmode="numeric" placeholder="'+fmtPlain(dueNow||m.monthly)+'" aria-label="Monto a abonar a '+esc(m.name)+'"></div><button type="button" class="btn tiny" data-mact="abonar">Abonar</button></div>')+
+  '<button type="button" class="btn ghost tiny" data-mact="editar">Editar</button><button type="button" class="btn ghost tiny" data-mact="borrar">Eliminar</button></div>'+
+  '<div class="m-confirm" hidden>¿Eliminar esta misión? <button type="button" class="btn danger tiny" data-mact="si">Sí, eliminar</button><button type="button" class="link" data-mact="no">No</button></div>')+
+ '</div>';
+}
+function fmtPlain(n){return Math.round(n||0).toLocaleString("es-CL")}
+function renderMissions(){
+ var ms=state.missions||[],active=ms.filter(function(m){return mSaved(m)<m.cost});
+ /* Inicio */
+ $("missionsHome").innerHTML=ms.length?
+   '<div class="card-head"><h2>Tus misiones</h2><button type="button" class="btn light tiny" data-newmission>+ Nueva misión</button></div><div class="missions">'+ms.slice(0,3).map(function(m){return missionCard(m,true)}).join("")+'</div>'+(ms.length>3?'<button type="button" class="link" data-goto2="savings">Ver todas</button>':'')
+   :'<div class="m-cta">'+mIcon("meta")+'<div><h2>Misión: ahorra para lo que quieres</h2><p>Un auto, un viaje, el pie de una casa. Dime cuánto cuesta y te digo cuánto apartar al mes.</p></div><button type="button" class="btn" data-newmission>Crear misión</button></div>';
+ /* Ahorros */
+ $("missionsList").innerHTML=ms.length?ms.map(function(m){return missionCard(m,false)}).join(""):'<div class="empty"><b>Aún no tienes misiones</b>Crea una para ahorrar para algo concreto: un auto, un viaje, un celular.</div>';
+ $("missionsMonth").textContent=missionsMonthTotal()?"Este mes apartaste "+cash(missionsMonthTotal())+" para tus misiones.":"";
+ document.querySelectorAll("[data-newmission]").forEach(function(b){b.onclick=function(){openMission()}});
+ document.querySelectorAll("[data-goto2]").forEach(function(b){b.onclick=function(){goTo(b.dataset.goto2)}});
+}
+$("missionsList").addEventListener("click",function(e){
+ var b=e.target.closest("[data-mact]");if(!b)return;
+ var card=b.closest(".mission"),m=(state.missions||[]).find(function(x){return x.id===card.dataset.mid});if(!m)return;
+ var act=b.dataset.mact;
+ if(act==="abonar"){var inp=card.querySelector(".m-amt"),v=parseMoney(inp.value)||parseMoney(inp.placeholder);if(!v){inp.focus();return}m.contribs=m.contribs||[];m.contribs.push({date:today(),amount:v});save();render();$("missionsMsg").textContent="Abonaste "+cash(v)+" a "+m.name+"."}
+ if(act==="editar")openMission(m.id);
+ if(act==="borrar"){card.querySelector(".m-confirm").hidden=false}
+ if(act==="no"){card.querySelector(".m-confirm").hidden=true}
+ if(act==="si"){state.missions=state.missions.filter(function(x){return x.id!==m.id});save();render();$("missionsMsg").textContent="Eliminaste la misión "+m.name+"."}
+});
+$("missionsList").addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.classList.contains("m-amt")){e.preventDefault();e.target.closest(".mission").querySelector('[data-mact="abonar"]').click()}});
+
+/* Crear o editar una misión */
+var mEdit=null,mMonths=12,mCustom=0;
+function openMission(id){
+ mEdit=id?(state.missions||[]).find(function(m){return m.id===id}):null;
+ $("mdTitle").textContent=mEdit?"Editar misión":"Misión: ahorrar para…";
+ $("mdName").value=mEdit?mEdit.name:"";$("mdCost").value=mEdit?fmtPlain(mEdit.cost):"";$("mdHave").value=mEdit&&mSaved(mEdit)?fmtPlain(mSaved(mEdit)):"";$("mdMonthly").value="";
+ mMonths=mEdit?mEdit.months:12;mCustom=0;$("mdErr").textContent="";
+ $("missionDlg").hidden=false;document.body.style.overflow="hidden";
+ updateMissionPlans();setTimeout(function(){$(mEdit?"mdCost":"mdName").focus()},50);
+}
+function closeMission(){$("missionDlg").hidden=true;document.body.style.overflow="";mEdit=null}
+$("mdClose").onclick=closeMission;
+$("missionDlg").addEventListener("click",function(e){if(e.target===$("missionDlg"))closeMission()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!$("missionDlg").hidden)closeMission()});
+$("mdChips").addEventListener("click",function(e){var b=e.target.closest("[data-mname]");if(!b)return;$("mdName").value=b.dataset.mname;$("mdCost").focus();updateMissionPlans()});
+function missionRemaining(){var cost=parseMoney($("mdCost").value),have=parseMoney($("mdHave").value);return {cost:cost,have:have,rem:Math.max(0,cost-have)}}
+function updateMissionPlans(){
+ var r=missionRemaining(),cap=saveCapacity(mEdit&&mEdit.id);
+ $("mdCostHelp").textContent=r.cost?"= "+cash(r.cost):"Puedes escribir 8 palos, 800 lucas o 8.000.000.";
+ $("mdHaveHelp").textContent=r.have?"= "+cash(r.have)+(r.cost?" · te faltan "+cash(r.rem):""):"";
+ $("mdPlans").hidden=!r.rem;
+ if(!r.rem){$("mdSave").disabled=!(r.cost&&r.have>=r.cost);return}
+ $("mdSave").disabled=false;
+ var presets=r.rem<600000?[2,3,6,12]:r.rem<3000000?[3,6,12,24]:[6,12,24,36];
+ var opts=presets.map(function(n){return {months:n,monthly:roundUp100(r.rem/n),label:n+" meses"}});
+ if(cap>0){var nCap=Math.min(120,Math.max(1,Math.ceil(r.rem/cap)));if(presets.indexOf(nCap)<0)opts.push({months:nCap,monthly:roundUp100(r.rem/nCap),label:"A tu ritmo",sub:nCap+" meses",mine:true})}
+ opts.sort(function(a,b){return a.months-b.months});
+ $("mdOpts").innerHTML=opts.map(function(o){var on=o.months===mMonths;return '<button type="button" class="m-opt'+(on?' on':'')+(o.mine?' mine':'')+'" data-months="'+o.months+'" aria-pressed="'+on+'"><small>'+o.label+(o.sub?' · '+o.sub:'')+'</small><b>'+cash(o.monthly)+'</b><span>al mes</span>'+fitTag(o.monthly,cap)+'</button>'}).join("");
+ $("mdCap").innerHTML=cap>0?"Hoy podrías apartar unos <b>"+cash(cap)+" al mes</b>"+(state.saveMode==="percent"&&state.savePercent>0?" (tu meta de ahorro"+((state.missions||[]).length?" menos tus otras misiones":"")+")":" (lo que te sobra a este ritmo)")+". A ese ritmo lo logras en <b>"+Math.ceil(r.rem/cap)+" meses</b>.":(state.income?"A este ritmo no te sobra plata este mes. Elige un plazo largo o revisa tus gastos.":"Agrega tu ingreso en Mi hogar para saber qué plazo te alcanza.");
+ $("mdRange").max=Math.max(60,mMonths);$("mdRange").value=mMonths;
+ var monthly=mCustom||roundUp100(r.rem/mMonths);
+ $("mdSummary").innerHTML="Ahorrando <b>"+cash(monthly)+" al mes</b> durante <b>"+mMonths+(mMonths===1?" mes":" meses")+"</b>, lo logras en <b>"+addMonthsLabel(today(),mMonths)+"</b>. "+fitTag(monthly,cap);
+}
+["mdName","mdCost","mdHave"].forEach(function(id){$(id).addEventListener("input",updateMissionPlans)});
+$("mdOpts").addEventListener("click",function(e){var b=e.target.closest("[data-months]");if(!b)return;mMonths=+b.dataset.months;mCustom=0;$("mdMonthly").value="";updateMissionPlans()});
+$("mdRange").addEventListener("input",function(){mMonths=+this.value;mCustom=0;$("mdMonthly").value="";updateMissionPlans()});
+$("mdMonthly").addEventListener("input",function(){var v=parseMoney(this.value),r=missionRemaining();mCustom=0;if(v&&r.rem){mCustom=v;mMonths=Math.max(1,Math.min(120,Math.ceil(r.rem/v)))}updateMissionPlans()});
+$("mdSave").onclick=function(){
+ var name=$("mdName").value.trim(),r=missionRemaining();
+ if(!name){$("mdErr").textContent="Escribe para qué quieres ahorrar.";$("mdName").focus();return}
+ if(!r.cost){$("mdErr").textContent="Escribe cuánto cuesta.";$("mdCost").focus();return}
+ var monthly=r.rem?(mCustom||roundUp100(r.rem/mMonths)):0;
+ state.missions=state.missions||[];
+ if(mEdit){mEdit.name=name;mEdit.kind=missionKind(name);mEdit.cost=r.cost;mEdit.initial=r.have;mEdit.months=mMonths;mEdit.monthly=monthly;mEdit.start=today();mEdit.base=r.have;mEdit.contribs=mEdit.contribs||[];
+   /* al editar, "ya tengo" incluye lo abonado */
+   var paid=mEdit.contribs.reduce(function(a,c){return a+c.amount},0);mEdit.initial=Math.max(0,r.have-paid)}
+ else state.missions.push({id:"m"+Date.now(),name:name,kind:missionKind(name),cost:r.cost,initial:r.have,months:mMonths,monthly:monthly,start:today(),base:r.have,contribs:[]});
+ save();closeMission();render();
+ $("missionsMsg").textContent=(mEdit?"Actualizaste":"Creaste")+" la misión "+name+".";
+};
+
 /* ---------- Navegación ---------- */
 function goTo(page){document.querySelectorAll(".tab").forEach(function(x){var on=x.dataset.page===page;x.classList.toggle("active",on);if(on)x.setAttribute("aria-current","page");else x.removeAttribute("aria-current")});document.querySelectorAll(".page").forEach(function(x){x.classList.toggle("active",x.id===page)});window.scrollTo(0,0)}
 document.querySelectorAll(".tab").forEach(function(b){b.onclick=function(){goTo(b.dataset.page)}});
@@ -1210,9 +1497,9 @@ document.querySelectorAll("[data-goto]").forEach(function(b){b.onclick=function(
 $("add").onclick=function(){handleText($("quick").value,"")};
 $("quick").onkeydown=function(e){if(e.key==="Enter"&&!e.isComposing){e.preventDefault();handleText($("quick").value,"")}};
 $("createFolder").onclick=createFolder;
-$("editHome").onclick=function(){showSetup(1)};
-$("editHome2").onclick=function(){showSetup(state.configured?2:1)};
-$("addMember").onclick=function(){showSetup(2)};
+$("editHome").onclick=function(){goTo("hogar")};
+$("editHome2").onclick=function(){if(state.configured)goTo("hogar");else showSetup(1)};
+$("addMember").onclick=function(){goTo("hogar");setTimeout(function(){$("h-add-people").focus()},60)};
 
 /* ---------- Configuración inicial ---------- */
 function setStep(n){$("step1").classList.toggle("active",n===1);$("step2").classList.toggle("active",n===2);$("seg2").classList.toggle("on",n===2);$("obStepTxt").textContent="Paso "+n+" de 2";$("setupErr").textContent="";$("onboard").scrollTop=0;if(n===2)renderTags();var f=n===1?$("setName"):$("add-people");if(f)setTimeout(function(){f.focus()},50)}
