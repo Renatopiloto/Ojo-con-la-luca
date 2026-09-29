@@ -278,6 +278,9 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 .tag .x{width:32px;height:32px;border-radius:50%;border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:18px;line-height:1;display:grid;place-items:center}
 .tag .x:hover{background:var(--danger-bg);color:var(--danger)}
 .tag.me{background:var(--mint-2);padding-right:4px}
+.ob-later{display:flex;gap:10px;align-items:flex-start;margin:18px 0 14px;padding:12px 14px;border-radius:12px;background:var(--mint-2);border:1px solid var(--line);color:var(--ink-2);font-size:15px;line-height:1.45}
+.ob-later svg{flex-shrink:0;margin-top:2px;color:var(--deep)}
+.ob-later b{color:var(--ink)}
 .more{border:1.5px dashed var(--line-2);border-radius:14px;padding:0 16px;margin-bottom:12px;background:#fff}
 .more[open]{border-style:solid;padding-bottom:4px}
 .more summary{cursor:pointer;list-style:none;min-height:50px;display:flex;align-items:center;gap:8px;font-weight:700;color:var(--deep)}
@@ -738,7 +741,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 
     <div id="step2" class="step">
       <h1>¿Con quién compartes gastos?</h1>
-      <p class="lead">Agrega a las personas con las que llevas las cuentas, una por una. Si las llevas solo, deja esto vacío y toca Listo.</p>
+      <p class="lead">Si llevas las cuentas con alguien más, agrégalo aquí. Es opcional.</p>
       <div class="field">
         <label for="add-people">Personas</label>
         <div class="adder"><input id="add-people" placeholder="Ej: Rebeca" autocomplete="off" enterkeyhint="done"><button type="button" class="btn light" data-add="people">Agregar</button></div>
@@ -757,7 +760,8 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
           <div class="tags" id="tags-businesses" aria-live="polite"></div>
         </div>
       </details>
-      <div class="ob-actions" style="margin-top:18px"><button id="backSetup" class="btn ghost big">Atrás</button><button id="finishSetup" class="btn big">Listo</button></div>
+      <p class="ob-later" id="obLater" aria-live="polite"></p>
+      <div class="ob-actions"><button id="backSetup" class="btn ghost big">Atrás</button><button id="finishSetup" class="btn big">Listo</button></div>
     </div>
   </div>
 </div></div>
@@ -1954,9 +1958,16 @@ function renderTags(){
    html+=draft[kind].map(function(n,i){return '<span class="tag">'+tagAv(n)+esc(n)+'<button type="button" class="x" data-kind="'+kind+'" data-i="'+i+'" aria-label="Quitar a '+esc(n)+'">×</button></span>'}).join("");
    $("tags-"+kind).innerHTML=html;
  });
+ updateSkip();
+}
+var INFO_SVG='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>';
+function updateSkip(){
+ var any=KINDS.some(function(k){return draft[k].length||$("add-"+k).value.trim()});
+ $("finishSetup").textContent=any?"Listo":"Saltar este paso";
+ $("obLater").innerHTML=INFO_SVG+"<span>"+(any?"Si más adelante quieres sumar o quitar a alguien, lo haces en <b>Mi hogar</b>.":"¿Llevas las cuentas solo? Toca <b>Saltar este paso</b>. Si más adelante quieres sumar a alguien, lo agregas en <b>Mi hogar</b> cuando quieras.")+"</span>";
 }
 document.querySelectorAll("[data-add]").forEach(function(b){b.onclick=function(){var k=b.dataset.add,inp=$("add-"+k);if(!inp.value.trim()){inp.focus();return}addDraft(k,inp.value);inp.value="";inp.focus()}});
-KINDS.forEach(function(k){$("add-"+k).onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();document.querySelector('[data-add="'+k+'"]').click()}}});
+KINDS.forEach(function(k){$("add-"+k).addEventListener("input",updateSkip);$("add-"+k).onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();document.querySelector('[data-add="'+k+'"]').click()}}});
 $("step2").addEventListener("click",function(e){var x=e.target.closest(".x");if(!x)return;draft[x.dataset.kind].splice(+x.dataset.i,1);renderTags()});
 function showSetup(step){
  step=step===2?2:1;
