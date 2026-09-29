@@ -327,6 +327,85 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   .member{padding:10px;gap:10px}
   .member .av{width:36px;height:36px}
 }
+
+/* Pestañas de la forma de anotar */
+.quick-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.mtabs{display:inline-flex;background:var(--mint-2);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px}
+.mtab{border:0;background:transparent;border-radius:10px;padding:0 14px;min-height:42px;font-weight:700;font-size:15px;color:var(--muted);display:inline-flex;align-items:center;gap:7px;cursor:pointer}
+.mtab svg{width:18px;height:18px}
+.mtab:hover{color:var(--ink)}
+.mtab.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(11,31,58,.18)}
+#whoRow{margin-bottom:14px}
+.mpanel .sub{margin:0 0 14px}
+.step-lbl{font-size:14px;font-weight:700;color:var(--ink-2)}
+/* Billetes */
+.bills-total{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:16px;padding:14px 18px;margin-bottom:14px}
+.bt-main{display:flex;flex-direction:column;min-width:0}
+.bt-main small{color:var(--navy-ink);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.bt-main b{font-family:var(--font-d);font-size:38px;font-weight:800;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+#bTrail{color:var(--navy-ink);font-size:14px;min-height:1.2em}
+.bt-ctl{display:flex;gap:6px}
+.bt-ctl .btn{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.bt-ctl .btn:disabled{opacity:.35;cursor:default}
+.money{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px;margin-bottom:16px}
+.money button{position:relative;border:0;cursor:pointer;font-family:var(--font-d);font-weight:800;font-size:17px;min-height:66px;transition:transform .08s}
+.money button:active{transform:scale(.95)}
+.bn{border-radius:10px;box-shadow:0 3px 0 rgba(11,31,58,.18);overflow:hidden}
+.bn::before{content:"";position:absolute;inset:5px;border:1.5px solid rgba(255,255,255,.4);border-radius:6px;pointer-events:none}
+.bn::after{content:"";position:absolute;right:-14px;top:50%;width:44px;height:44px;margin-top:-22px;border-radius:50%;border:2px solid rgba(255,255,255,.25);pointer-events:none}
+.bn span{position:relative}
+.b1{background:#8DC04F;color:#0B1F3A}
+.b2{background:#7C55C0;color:#fff}
+.b5{background:#C4427B;color:#fff}
+.b10{background:#2E6CB4;color:#fff}
+.b20{background:#E88A2C;color:#0B1F3A}
+.coin{border-radius:999px;justify-self:start;width:66px;min-width:66px;font-size:14px!important;box-shadow:inset 0 0 0 3px rgba(0,0,0,.12),0 3px 0 rgba(11,31,58,.18)}
+.c500{background:radial-gradient(circle at 35% 30%,#F6E7A8,#D2AE4E 65%,#B8923A);color:#3B2A00}
+.c100{background:radial-gradient(circle at 35% 30%,#F4F6F8,#C3CAD1 65%,#A5AEB8);color:#1F2A36}
+.money .cnt{position:absolute;top:-7px;right:-5px;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:var(--navy);color:#fff;font-style:normal;font-family:var(--font-b);font-size:13px;font-weight:700;display:none;align-items:center;justify-content:center;border:2px solid #fff}
+.money .cnt.show{display:inline-flex}
+.bn .cnt{top:4px;right:4px}
+.bills-step{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.catchip{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:3px 13px 3px 3px;font-weight:600;font-size:15px;cursor:pointer;min-height:42px}
+.catchip .ficon{width:32px;height:32px;border-radius:50%}
+.catchip .ficon svg{width:17px;height:17px}
+.catchip.on{border-color:var(--green);background:var(--mint);box-shadow:inset 0 0 0 1px var(--green)}
+.bills-save{display:flex;gap:10px;flex-wrap:wrap}
+.bills-save input{flex:1 1 220px}
+.bills-save .btn{flex:0 0 auto}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+/* Hablar */
+.voice{display:flex;align-items:center;gap:18px}
+.voice b{font-family:var(--font-d);font-size:17px}
+.voice p{margin:4px 0 0;color:var(--ink-2);font-size:15px}
+.voice q{color:var(--ink);font-style:italic}
+.mic{width:84px;height:84px;flex-shrink:0;border-radius:50%;border:0;background:var(--green);color:var(--navy);display:grid;place-items:center;cursor:pointer;box-shadow:0 12px 26px -12px rgba(20,184,122,.9)}
+.mic.on{background:#D93D42;color:#fff;animation:micPulse 1.4s infinite}
+@keyframes micPulse{0%{box-shadow:0 0 0 0 rgba(217,61,66,.45)}70%{box-shadow:0 0 0 18px rgba(217,61,66,0)}100%{box-shadow:0 0 0 0 rgba(217,61,66,0)}}
+#vText{width:100%;min-height:92px;resize:vertical;border:1.5px solid var(--line-2);border-radius:12px;background:#fff;padding:12px 14px;font-size:17px;line-height:1.45;font-family:var(--font-b)}
+#vText:focus{outline:none;border-color:var(--deep);box-shadow:0 0 0 3px rgba(20,184,122,.25)}
+.voice-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+.vitems{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.vitems:empty{display:none}
+.vitem{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--mint-2)}
+.vfields{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.vrow{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:8px}
+.vrow2{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:8px}
+.vitem input,.vitem select{min-height:44px;font-size:16px}
+.vitem .affix input{font-size:17px}
+.vnote{font-size:13px;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:8px;padding:4px 8px}
+.vitem .x{width:40px;height:40px;border-radius:10px;border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:20px;flex-shrink:0}
+.vitem .x:hover{background:var(--danger-bg);color:var(--danger)}
+@media(max-width:760px){
+  .quick-top{flex-direction:column;align-items:stretch}
+  .mtabs{display:grid;grid-template-columns:repeat(3,1fr)}
+  .mtab{justify-content:center;padding:0 6px}
+  .money{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .coin{justify-self:center}
+  .voice{flex-direction:column;align-items:flex-start;gap:12px}
+  .vrow,.vrow2{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){.mic.on{animation:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style></head><body>
 
@@ -461,23 +540,64 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
     </div>
   </div>
 
-  <div class="card quick">
-    <h2>Anota un gasto</h2>
-    <p class="sub">Escríbelo como lo dirías. Nosotros sacamos el monto y la carpeta.</p>
-    <div class="quick-bar">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-      <input id="quick" placeholder="Ej: bencina 45 lucas" aria-label="Gasto" autocomplete="off" enterkeyhint="done">
-      <button id="add" class="btn">Guardar gasto</button>
+  <div class="card quick" id="quickCard">
+    <div class="quick-top">
+      <h2>Anota un gasto</h2>
+      <div class="mtabs" role="tablist" aria-label="Forma de anotar">
+        <button type="button" role="tab" class="mtab on" data-m="write" aria-selected="true" aria-controls="m-write"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Escribir</button>
+        <button type="button" role="tab" class="mtab" data-m="bills" aria-selected="false" aria-controls="m-bills"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 10v.01M18 14v.01"/></svg>Billetes</button>
+        <button type="button" role="tab" class="mtab" data-m="voice" aria-selected="false" aria-controls="m-voice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>Hablar</button>
+      </div>
     </div>
-    <div class="quick-meta">
-      <div class="whorow" id="whoRow"><span>¿Quién?</span><div class="chips" id="whoChips"></div><select id="whoQuick" aria-label="Quién hizo el gasto" hidden></select></div>
-      <div class="photoActions">
+    <div class="whorow" id="whoRow"><span>¿Quién?</span><div class="chips" id="whoChips"></div><select id="whoQuick" aria-label="Quién hizo el gasto" hidden></select></div>
+
+    <div class="mpanel" id="m-write" role="tabpanel">
+      <p class="sub">Escríbelo como lo dirías. Nosotros sacamos el monto y la carpeta.</p>
+      <div class="quick-bar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+        <input id="quick" placeholder="Ej: bencina 45 lucas" aria-label="Gasto" autocomplete="off" enterkeyhint="done">
+        <button id="add" class="btn">Guardar gasto</button>
+      </div>
+      <div class="photoActions" style="margin-top:14px">
         <label class="btn light photoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>Tomar foto<input id="cameraInput" type="file" accept="image/*" capture="environment"></label>
         <label class="btn light photoBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>Elegir foto<input id="galleryInput" type="file" accept="image/*"></label>
       </div>
+      <div class="examples"><span>Prueba:</span><button type="button" class="ex">bebida 1200</button><button type="button" class="ex">1200 en la U</button><button type="button" class="ex">colegio Franco 400000</button><button type="button" class="ex">bencina 45 lucas</button></div>
+      <div id="photoPreview"></div>
     </div>
-    <div class="examples"><span>Prueba:</span><button type="button" class="ex">bebida 1200</button><button type="button" class="ex">1200 en la U</button><button type="button" class="ex">colegio Franco 400000</button><button type="button" class="ex">bencina 45 lucas</button></div>
-    <div id="photoPreview"></div><div id="result"></div><div id="ask"></div>
+
+    <div class="mpanel" id="m-bills" role="tabpanel" hidden>
+      <p class="sub">Toca los billetes y monedas como si estuvieras pagando. Se van sumando.</p>
+      <div class="bills-total">
+        <div class="bt-main"><small>Monto</small><b id="bTotal">$0</b><span id="bTrail"></span></div>
+        <div class="bt-ctl"><button type="button" id="bUndo" class="btn ghost tiny" disabled>Deshacer</button><button type="button" id="bClear" class="btn ghost tiny" disabled>Borrar</button></div>
+      </div>
+      <div class="money" id="money">
+        <button type="button" class="coin c100" data-v="100" aria-label="Sumar 100 pesos"><span>$100</span><i class="cnt"></i></button>
+        <button type="button" class="coin c500" data-v="500" aria-label="Sumar 500 pesos"><span>$500</span><i class="cnt"></i></button>
+        <button type="button" class="bn b1" data-v="1000" aria-label="Sumar 1.000 pesos"><span>$1.000</span><i class="cnt"></i></button>
+        <button type="button" class="bn b2" data-v="2000" aria-label="Sumar 2.000 pesos"><span>$2.000</span><i class="cnt"></i></button>
+        <button type="button" class="bn b5" data-v="5000" aria-label="Sumar 5.000 pesos"><span>$5.000</span><i class="cnt"></i></button>
+        <button type="button" class="bn b10" data-v="10000" aria-label="Sumar 10.000 pesos"><span>$10.000</span><i class="cnt"></i></button>
+        <button type="button" class="bn b20" data-v="20000" aria-label="Sumar 20.000 pesos"><span>$20.000</span><i class="cnt"></i></button>
+      </div>
+      <div class="bills-step"><span class="step-lbl">¿En qué fue?</span><div class="chips" id="bCats"></div></div>
+      <div class="bills-save"><input id="bDesc" placeholder="Detalle (opcional), ej: almuerzo" aria-label="Detalle del gasto" autocomplete="off"><button type="button" id="bSave" class="btn big" disabled>Guardar</button></div>
+    </div>
+
+    <div class="mpanel" id="m-voice" role="tabpanel" hidden>
+      <div class="voice">
+        <button type="button" id="micBtn" class="mic" aria-pressed="false" aria-label="Empezar a dictar"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></button>
+        <div><b id="micTitle">Toca el micrófono y cuéntame tus gastos</b><p id="micHint">Habla normal, como si le contaras tu día a alguien. Por ejemplo: <q>hoy gasté 5 lucas en el almuerzo, más tarde tomé micro y gasté 800, y en la noche compré pan por 1.500</q>.</p></div>
+      </div>
+      <label for="vText" class="step-lbl" style="display:block;margin:14px 0 6px">Lo que contaste</label>
+      <textarea id="vText" rows="3" placeholder="Aquí aparece lo que dices. También puedes escribirlo, o dictarlo con el micrófono del teclado de tu celular."></textarea>
+      <div class="voice-actions"><button type="button" id="vParse" class="btn light">Reconocer gastos</button><span class="muted" id="vInfo"></span></div>
+      <div id="vItems" class="vitems"></div>
+      <div class="voice-actions" id="vSaveRow" hidden><button type="button" id="vSave" class="btn big">Guardar</button><button type="button" id="vCancel" class="link">Descartar</button></div>
+    </div>
+
+    <div id="result" aria-live="polite"></div><div id="ask"></div>
   </div>
 
   <div class="grid2">
@@ -540,9 +660,17 @@ function cash(n){n=Math.round(Number(n)||0);return (n<0?"−":"")+"$"+Math.abs(n
 function amountFrom(s){var x=norm(s).replace(/\./g,"").replace(/,/g,"");var l=x.match(/(\d+(?:\.\d+)?)\s*lucas?/);if(l)return Math.round(Number(l[1])*1000);var a=x.match(/\d{1,9}/g);return a?Math.max.apply(null,a.map(Number)):0}
 function ensurePeople(){state.people.concat(state.pets).forEach(function(n){if(!state.folders.some(function(f){return norm(f.name)===norm(n)}))state.folders.splice(state.folders.length-1,0,{name:n,keys:[norm(n)],icon:"●"})});(state.businesses||[]).forEach(function(n){if(!state.folders.some(function(f){return norm(f.name)===norm(n)}))state.folders.splice(state.folders.length-1,0,{name:n,keys:[norm(n)],icon:"▣",business:true})})}
 function person(text){var t=norm(text),all=state.people.concat(state.pets).concat(state.businesses||[]);for(var i=0;i<all.length;i++)if(t.indexOf(norm(all[i]))>=0)return all[i];return null}
-function classify(text,amount){var t=norm(text),p=person(text);if(p)return p;if(/universidad|facultad|campus|\buni\b|\bla u\b/.test(t))return "Universidad";var best=null,score=0;state.folders.forEach(function(f){if(f.name==="Otros"||f.name==="Hormiguitas")return;var sc=0;(f.keys||[]).forEach(function(k){if(t.indexOf(norm(k))>=0)sc++});if(sc>score){score=sc;best=f.name}});if(best)return best;if(amount>0&&amount<5000)return "Hormiguitas";var ant=state.folders.find(function(f){return f.name==="Hormiguitas"});if(ant&&(ant.keys||[]).some(function(k){return t.indexOf(norm(k))>=0}))return "Hormiguitas";return "Otros"}
+function classify(text,amount){var t=norm(text),p=person(text);if(p)return p;if(/universidad|facultad|campus|\buni\b|\bla u\b/.test(t))return "Universidad";var best=null,score=0;state.folders.forEach(function(f){if(f.name==="Otros"||f.name==="Hormiguitas")return;var sc=0;(f.keys||[]).forEach(function(k){if(t.indexOf(norm(k))>=0)sc++});(EXTRA_KEYS[f.name]||[]).forEach(function(k){if(new RegExp("(^|[^a-z0-9])"+k+"($|[^a-z0-9])").test(t))sc++});if(sc>score){score=sc;best=f.name}});if(best)return best;if(amount>0&&amount<5000)return "Hormiguitas";var ant=state.folders.find(function(f){return f.name==="Hormiguitas"});if(ant&&(ant.keys||[]).some(function(k){return t.indexOf(norm(k))>=0}))return "Hormiguitas";return "Otros"}
+/* Palabras extra para reconocer mejor la carpeta (sin tildes) */
+var EXTRA_KEYS={
+ "Alimentación":["almuerzo","almorzamos","desayuno","once","cena","colacion","pan","leche","huevos","feria","verdura","verduras","fruta","frutas","carniceria","panaderia","almacen","negocio","minimarket","santa isabel","tottus","acuenta","completo","completos","sushi","pizza","empanada","empanadas","hamburguesa","churrasco","mcdonalds","mcdonald","kfc","rappi","pedidos ya","pedidosya","uber eats","mercaderia"],
+ "Transporte":["pasaje","pasajes","tren","metrotren","bencinera","gasolina","parking"],
+ "Salud":["cruz verde","salcobrand","ahumada","dentista","isapre","fonasa","examen","examenes","lentes","remedios","vacuna"],
+ "Gastos del hogar":["gasto comun","enel","aguas andinas","metrogas","abastible","lipigas","gasco","vtr","movistar","entel","wom","claro","celular","cable","cuenta de la luz","cuenta del agua"],
+ "Créditos":["deuda","avance","credito de consumo"]
+};
 function typeOf(t){t=norm(t);if(/colegio|universidad|facultad|curso|matricula/.test(t))return "Educación";if(/farmacia|medico|doctor|clinica|veterinario/.test(t))return "Salud";if(/bencina|uber|tag|taxi/.test(t))return "Transporte";if(/comida|almuerzo|bebida|cafe|supermercado|restaurant/.test(t))return "Alimentación";return "Otros"}
-function addMove(folder,text,amount,who,photo){state.moves.unshift({id:state.seq++,date:new Date().toISOString().slice(0,10),text:text,amount:amount,folder:folder,who:who||"",photo:photo||"",type:typeOf(text)});save();render()}
+function addMove(folder,text,amount,who,photo,date,quiet){state.moves.unshift({id:state.seq++,date:date||new Date().toISOString().slice(0,10),text:text,amount:amount,folder:folder,who:who||"",photo:photo||"",type:typeOf(text)});save();if(!quiet)render()}
 /* Quién hizo el gasto queda en "who"; la carpeta sigue siendo la categoría del gasto. */
 function addQuick(){var el=$("quick"),text=el.value.trim(),amount=amountFrom(text);if(!text||!amount){$("result").innerHTML='<div class="tip">No pude reconocer el gasto. Prueba “1200 en la U” o “bebida 1200”.</div>';return}var folder=classify(text,amount);var selectedWho=$("whoQuick")?$("whoQuick").value:"";if(folder==="Otros"){var buttons=state.folders.map(function(f){return '<button class="btn tiny light pick" data-f="'+encodeURIComponent(f.name)+'">'+esc(f.name)+'</button>'}).join("");$("ask").innerHTML='<div class="ask"><b>¿Dónde quieres agregar esto?</b><div class="askbuttons">'+buttons+'</div></div>';document.querySelectorAll(".pick").forEach(function(b){b.onclick=function(){addMove(decodeURIComponent(b.dataset.f),text,amount,selectedWho,pendingPhoto);el.value="";pendingPhoto="";updatePhotoPreview();$("ask").innerHTML="";$("result").innerHTML='<div class="tip">Guardado.</div>'}});return}addMove(folder,text,amount,selectedWho,pendingPhoto);pendingPhoto="";updatePhotoPreview();el.value="";$("ask").innerHTML="";$("result").innerHTML='<div class="tip">Listo: <b>'+esc(folder)+'</b> · '+cash(amount)+'</div>'}
 window.editMove=function(id){var x=state.moves.find(function(m){return m.id===id});if(!x)return;var text=prompt("Nombre o descripción:",x.text);if(text===null)return;var amount=prompt("Monto:",x.amount);if(amount===null)return;amount=Number(String(amount).replace(/\./g,"").replace(/,/g,""));if(!text.trim()||!amount)return alert("Revisa nombre y monto.");var folders=state.folders.map(function(f,i){return (i+1)+". "+f.name}).join("\n");var current=Math.max(0,state.folders.findIndex(function(f){return f.name===x.folder}));var choice=prompt("¿En qué carpeta quieres guardar este gasto?\n\n"+folders+"\n\nEscribe el número de la carpeta:",String(current+1));if(choice===null)return;var idx=Number(choice)-1;if(idx<0||idx>=state.folders.length)return alert("Carpeta no válida.");x.text=text.trim();x.amount=amount;x.folder=state.folders[idx].name;x.type=typeOf(x.text);save();render();if(window.currentFolder)openFolder(window.currentFolder)}
@@ -652,7 +780,7 @@ function render(){
  var phrases=["¿Qué deseas ahorrar hoy, {n}?","Contemos cuánto gastamos hoy, {n}.","Veamos cómo van tus lucas hoy, {n}.","Cada luca cuenta, {n}."];
  $("phrase").textContent=phrases[new Date().getDate()%phrases.length].replace(", {n}",state.name?", "+state.name:"");
  $("people").innerHTML=state.people.map(function(n){return '<span class="person">Persona · <b>'+esc(n)+'</b></span>'}).join("");
- renderHome(total,ants,left);renderWho();renderCharts();
+ renderHome(total,ants,left);renderWho();renderCharts();renderBillCats();
  $("history").innerHTML=state.moves.length?state.moves.map(function(x){return '<div class="item"><span>'+esc(x.text)+(x.photo?' <span class="pill">Con boleta</span>':'')+'</span><span class="folderCell"><span class="pill">'+esc(x.folder)+'</span></span><b>'+cash(x.amount)+'</b><span><button class="btn tiny light" onclick="editMove('+x.id+')">Editar</button> <button class="btn tiny danger" onclick="delMove('+x.id+')">Eliminar</button></span></div>'}).join(""):'<p class="muted">Aún no hay movimientos.</p>';
  $("folderGrid").innerHTML=state.folders.map(function(f){var list=state.moves.filter(function(x){return x.folder===f.name}),sum=list.reduce(function(a,x){return a+x.amount},0);return '<button type="button" class="folder" data-f="'+encodeURIComponent(f.name)+'">'+iconFor(f)+'<b>'+esc(f.name)+'</b><small>'+list.length+(list.length===1?' gasto':' gastos')+' · '+cash(sum)+'</small></button>'}).join("");
  document.querySelectorAll(".folder").forEach(function(el){el.onclick=function(){openFolder(decodeURIComponent(el.dataset.f))}});
@@ -675,6 +803,179 @@ function takePhotoFile(file){
 }
 $("cameraInput").onchange=function(){takePhotoFile(this.files&&this.files[0]);this.value=""};
 $("galleryInput").onchange=function(){takePhotoFile(this.files&&this.files[0]);this.value=""};
+
+/* ---------- Formas de anotar: Escribir / Billetes / Hablar ---------- */
+function setMode(m){
+ document.querySelectorAll(".mtab").forEach(function(t){var on=t.dataset.m===m;t.classList.toggle("on",on);t.setAttribute("aria-selected",on)});
+ ["write","bills","voice"].forEach(function(k){$("m-"+k).hidden=k!==m});
+ $("result").innerHTML="";$("ask").innerHTML="";
+ try{localStorage.setItem("ojoModo",m)}catch(e){}
+}
+document.querySelectorAll(".mtab").forEach(function(t){t.onclick=function(){setMode(t.dataset.m)}});
+function selectedWho(){return $("whoQuick")?$("whoQuick").value:""}
+function today(){return new Date().toISOString().slice(0,10)}
+function isMemberFolder(f){return state.people.concat(state.pets).some(function(p){return norm(p)===norm(f.name)})}
+function catOptions(sel){return state.folders.filter(function(f){return !isMemberFolder(f)||f.name===sel}).map(function(f){return '<option'+(f.name===sel?' selected':'')+'>'+esc(f.name)+'</option>'}).join("")}
+
+/* Billetes: cada toque suma */
+var taps=[],bCat="";
+function renderBills(){
+ var total=taps.reduce(function(a,v){return a+v},0);
+ $("bTotal").textContent=cash(total);
+ var counts={};taps.forEach(function(v){counts[v]=(counts[v]||0)+1});
+ $("bTrail").textContent=Object.keys(counts).map(Number).sort(function(a,b){return b-a}).map(function(v){return counts[v]+" × "+cash(v)}).join(" + ");
+ document.querySelectorAll("#money [data-v]").forEach(function(b){var c=counts[b.dataset.v]||0,el=b.querySelector(".cnt");el.textContent=c?"×"+c:"";el.classList.toggle("show",c>0)});
+ $("bUndo").disabled=$("bClear").disabled=!taps.length;
+ $("bSave").disabled=!total;
+ $("bSave").textContent=total?"Guardar "+cash(total):"Guardar";
+}
+function renderBillCats(){
+ var list=state.folders.filter(function(f){return !isMemberFolder(f)});
+ if(bCat&&!list.some(function(f){return f.name===bCat}))bCat="";
+ $("bCats").innerHTML=list.map(function(f){var on=f.name===bCat;return '<button type="button" class="catchip'+(on?' on':'')+'" data-cat="'+encodeURIComponent(f.name)+'" aria-pressed="'+on+'">'+iconFor(f,true)+esc(f.name)+'</button>'}).join("");
+}
+$("money").addEventListener("click",function(e){var b=e.target.closest("[data-v]");if(!b)return;taps.push(Number(b.dataset.v));$("result").innerHTML="";renderBills()});
+$("bUndo").onclick=function(){taps.pop();renderBills()};
+$("bClear").onclick=function(){taps=[];renderBills()};
+$("bCats").addEventListener("click",function(e){var b=e.target.closest("[data-cat]");if(!b)return;bCat=decodeURIComponent(b.dataset.cat);renderBillCats()});
+$("bSave").onclick=function(){
+ var total=taps.reduce(function(a,v){return a+v},0);if(!total)return;
+ var desc=$("bDesc").value.trim(),cat=bCat;
+ if(!cat&&desc){var guess=classify(desc,total);if(guess!=="Otros")cat=guess}
+ if(!cat){$("result").innerHTML='<div class="ask"><b>¿En qué fue?</b> Toca una carpeta arriba y vuelve a guardar.</div>';$("bCats").scrollIntoView({block:"center"});return}
+ addMove(cat,desc||cat,total,selectedWho(),"");
+ $("result").innerHTML='<div class="tip">Listo: <b>'+esc(cat)+'</b> · '+cash(total)+'</div>';
+ taps=[];bCat="";$("bDesc").value="";renderBills();renderBillCats();
+};
+
+/* Hablar: una historia se separa en varios gastos */
+var NUMW={cero:0,un:1,uno:1,una:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,trece:13,catorce:14,quince:15,dieciseis:16,diecisiete:17,dieciocho:18,diecinueve:19,veinte:20,veintiun:21,veintiuno:21,veintiuna:21,veintidos:22,veintitres:23,veinticuatro:24,veinticinco:25,veintiseis:26,veintisiete:27,veintiocho:28,veintinueve:29,treinta:30,cuarenta:40,cincuenta:50,sesenta:60,setenta:70,ochenta:80,noventa:90,cien:100,ciento:100,doscientos:200,doscientas:200,trescientos:300,trescientas:300,cuatrocientos:400,cuatrocientas:400,quinientos:500,quinientas:500,seiscientos:600,seiscientas:600,setecientos:700,setecientas:700,ochocientos:800,ochocientas:800,novecientos:900,novecientas:900};
+var UNIT_AFTER=/^(lucas?|lukas?|palos?|gambas?|pesos?|mil|millon|millones|k)$/;
+function coreW(w){return norm(w).replace(/[^a-z0-9]/g,"")}
+/* "dos mil quinientos" → "2500"; "un completo" queda igual */
+function wordsToDigits(text){
+ var w=text.split(/\s+/),out=[],i=0;
+ while(i<w.length){
+   var c0=coreW(w[i]);
+   if(!(c0 in NUMW)&&c0!=="mil"&&c0!=="millon"&&c0!=="millones"){out.push(w[i]);i++;continue}
+   /* "30 mil" ya tiene número: se deja igual y se lee como 30.000 */
+   if((c0==="mil"||c0==="millon"||c0==="millones")&&out.length&&/^\$?\d[\d.,]*$/.test(out[out.length-1])){out.push(w[i]);i++;continue}
+   var j=i,total=0,cur=0,last=w[i];
+   while(j<w.length){
+     var c=coreW(w[j]);
+     if(c in NUMW)cur+=NUMW[c];
+     else if(c==="mil"){cur=(cur||1)*1000;total+=cur;cur=0}
+     else if(c==="millon"||c==="millones"){total=(total+(cur||1))*1e6;cur=0}
+     else if(c==="y"&&cur>=20&&cur<100&&cur%10===0&&j+1<w.length&&NUMW[coreW(w[j+1])]<10){}
+     else break;
+     last=w[j];j++;
+     if(/[,.;:!?]$/.test(last))break;
+   }
+   var val=total+cur,next=coreW(w[j]||""),punct=(last.match(/[,.;:!?]+$/)||[""])[0];
+   if(val>=100||UNIT_AFTER.test(next)){out.push(String(val)+punct);i=j}else{out.push(w[i]);i++}
+ }
+ return out.join(" ");
+}
+var UNITV={luca:1e3,lucas:1e3,luka:1e3,lukas:1e3,palo:1e6,palos:1e6,gamba:100,gambas:100,k:1e3,mil:1e3,"millón":1e6,millon:1e6,millones:1e6};
+function numV(s){if(/^\d{1,3}([.,]\d{3})+$/.test(s))return Number(s.replace(/[.,]/g,""));return Number(s.replace(",","."))}
+function findAmts(t){
+ var found=[],taken=[],m,re;
+ function add(a,b,v,assumed){if(!(v>0)||taken.some(function(r){return !(b<=r[0]||a>=r[1])}))return;taken.push([a,b]);found.push({start:a,end:b,value:Math.round(v),assumed:!!assumed})}
+ re=/(\d+(?:[.,]\d+)?)\s*(lucas?|lukas?|palos?|gambas?|k|mil|mill[oó]n|millones)(?![a-záéíóúñ])/g;while((m=re.exec(t)))add(m.index,m.index+m[0].length,numV(m[1])*(UNITV[m[2]]||1000));
+ re=/\$\s*(\d{1,3}(?:[.,]\d{3})+|\d+)(\s*pesos?)?/g;while((m=re.exec(t)))add(m.index,m.index+m[0].length,numV(m[1]));
+ re=/(\d{1,3}(?:[.,]\d{3})+|\d{3,})(\s*pesos?)?/g;while((m=re.exec(t)))add(m.index,m.index+m[0].length,numV(m[1]));
+ if(!found.length){re=/(^|[^\d.,$])(\d{1,2})(\s*pesos?)?(?![\d.,]*\d)/g;while((m=re.exec(t))){var st=m.index+m[1].length;add(st,m.index+m[0].length,m[3]?Number(m[2]):Number(m[2])*1000,!m[3])}}
+ return found.sort(function(a,b){return a.start-b.start});
+}
+var SPLIT_RE=/\s*(?:[,;.!?]+(?=\s|$)|\s+y\s+|\s+(?:despu[eé]s|luego|m[aá]s tarde|tambi[eé]n|adem[aá]s|al final|en la ma[nñ]ana|en la tarde|en la noche|por la ma[nñ]ana|por la tarde|por la noche|a la hora de almuerzo)(?:\s+|$))\s*/;
+var FILL_RE=/(^|\s)(gast[eéoó]|gastamos|pagu[eé]|pag[oó]|pagamos|compr[eéoó]|compramos|tom[eéoó]|tomamos|me cost[oó]|cost[oó]|sal[ií][oó]|me sali[oó]|fueron|fue|ech[eé]|cargu[eé]|hoy|ayer|anteayer|antes de ayer|como|unos|unas|aproximadamente|m[aá]s o menos|pesos?|m[aá]s tarde|despu[eé]s|luego|tambi[eé]n|adem[aá]s|al final|en la ma[nñ]ana|en la tarde|en la noche|por la ma[nñ]ana|por la tarde|por la noche|a la hora de almuerzo)(?=\s|$|[,.;])/g;
+var CONN_RE=/^(en|el|la|los|las|de|del|al|a|y|con|por|para|pa|un|una|me|se|que|otro|otra)\s+/;
+var CONN_END=/\s+(en|el|la|los|las|de|del|al|a|y|con|por|para|pa|un|una|me|se|que)$/;
+function cleanDesc(seg,amts,who){
+ var d=seg;
+ amts.slice().sort(function(a,b){return b.start-a.start}).forEach(function(a){d=d.slice(0,a.start)+" "+d.slice(a.end)});
+ d=d.replace(/\$/g," ").replace(FILL_RE," ").replace(FILL_RE," ");
+ if(who)d=d.replace(new RegExp("(^|\\s)"+who.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?=\\s|$)","g")," ");
+ d=d.replace(/\s+/g," ").trim();
+ var prev;do{prev=d;d=d.replace(CONN_RE,"").replace(CONN_END,"").replace(/^[,.;:\-]+|[,.;:\-]+$/g,"").trim()}while(d!==prev);
+ return d.slice(0,60);
+}
+function dateOf(seg,cur){var n=norm(seg),d=new Date();if(/\b(anteayer|antes de ayer)\b/.test(n)){d.setDate(d.getDate()-2);return d.toISOString().slice(0,10)}if(/\bayer\b/.test(n)){d.setDate(d.getDate()-1);return d.toISOString().slice(0,10)}if(/\bhoy\b/.test(n))return today();return cur}
+function whoIn(seg){var n=norm(seg),all=state.people.concat(state.pets);for(var i=0;i<all.length;i++){if(new RegExp("(^|[^a-z0-9])"+norm(all[i]).replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"($|[^a-z0-9])").test(n))return all[i]}return ""}
+function parseStory(raw){
+ var s=wordsToDigits(String(raw||"").replace(/\s+/g," ").trim()).toLowerCase();
+ var parts=s.split(SPLIT_RE).map(function(x){return (x||"").trim()}).filter(Boolean);
+ var items=[],buf="",cur=today();
+ function build(seg){
+   cur=dateOf(seg,cur);
+   var a=findAmts(seg),who=whoIn(seg)||selectedWho(),desc=cleanDesc(seg,a,whoIn(seg));
+   var biz=(state.businesses||[]).find(function(b){return norm(seg).indexOf(norm(b))>=0});
+   var folder=biz||classify(desc||seg,a[0].value);
+   if(isMemberFolder({name:folder}))folder=classify(desc,a[0].value);
+   return {amount:a[0].value,desc:desc,folder:folder,date:cur,who:who,note:a[0].assumed?"Entendí "+cash(a[0].value)+" (lucas). Si eran pesos, corrígelo.":(a.length>1?"Había más de un monto; usé el primero.":"")};
+ }
+ parts.forEach(function(p){
+   if(findAmts(p).length){items.push(build(buf?buf+" y "+p:p));buf=""}
+   else{
+     cur=dateOf(p,cur);
+     var last=items[items.length-1];
+     if(last&&!last.desc&&!buf){last.desc=cleanDesc(p,[],"");last.folder=classify(last.desc,last.amount)}
+     else buf=buf?buf+" y "+p:p;
+   }
+ });
+ if(buf&&items.length&&!items[items.length-1].desc){var l=items[items.length-1];l.desc=cleanDesc(buf,[],"");l.folder=classify(l.desc,l.amount)}
+ items.forEach(function(it){if(!it.desc)it.desc=it.folder.toLowerCase()});
+ return items;
+}
+var vItems=[];
+function renderVItems(){
+ $("vItems").innerHTML=vItems.map(function(it,i){
+   return '<div class="vitem">'+iconFor(folderByName(it.folder),true)+'<div class="vfields">'+
+     '<div class="vrow"><input class="v-desc" data-i="'+i+'" value="'+esc(it.desc)+'" aria-label="Detalle"><div class="affix"><span aria-hidden="true">$</span><input class="v-amt" data-i="'+i+'" inputmode="numeric" value="'+Math.round(it.amount).toLocaleString("es-CL")+'" aria-label="Monto"></div></div>'+
+     '<div class="vrow2"><select class="v-cat" data-i="'+i+'" aria-label="Carpeta">'+catOptions(it.folder)+'</select><input type="date" class="v-date" data-i="'+i+'" value="'+it.date+'" max="'+today()+'" aria-label="Fecha"></div>'+
+     (it.note?'<span class="vnote">'+esc(it.note)+'</span>':'')+
+   '</div><button type="button" class="x" data-i="'+i+'" aria-label="Quitar este gasto">×</button></div>';
+ }).join("");
+ $("vSaveRow").hidden=!vItems.length;
+ var tot=vItems.reduce(function(a,x){return a+(x.amount||0)},0);
+ $("vSave").textContent=vItems.length===1?"Guardar 1 gasto · "+cash(tot):"Guardar "+vItems.length+" gastos · "+cash(tot);
+}
+$("vItems").addEventListener("input",function(e){var t=e.target,i=+t.dataset.i,it=vItems[i];if(!it)return;
+ if(t.classList.contains("v-desc"))it.desc=t.value;
+ if(t.classList.contains("v-amt")){it.amount=Number(t.value.replace(/\D/g,""))||0;var tot=vItems.reduce(function(a,x){return a+(x.amount||0)},0);$("vSave").textContent="Guardar "+vItems.length+(vItems.length===1?" gasto · ":" gastos · ")+cash(tot)}
+ if(t.classList.contains("v-date"))it.date=t.value||today();});
+$("vItems").addEventListener("change",function(e){var t=e.target;if(t.classList.contains("v-cat")){vItems[+t.dataset.i].folder=t.value;renderVItems()}});
+$("vItems").addEventListener("click",function(e){var x=e.target.closest(".x");if(!x)return;vItems.splice(+x.dataset.i,1);renderVItems()});
+$("vParse").onclick=function(){
+ var txt=$("vText").value.trim();$("result").innerHTML="";
+ if(!txt){$("vInfo").textContent="Primero cuéntame o escribe tus gastos.";return}
+ vItems=parseStory(txt);
+ $("vInfo").textContent=vItems.length?"Encontré "+vItems.length+(vItems.length===1?" gasto. Revísalo":" gastos. Revísalos")+" antes de guardar.":"No encontré montos. Prueba diciendo, por ejemplo: gasté 3 lucas en pan.";
+ renderVItems();
+};
+$("vSave").onclick=function(){
+ var ok=vItems.filter(function(it){return it.amount>0});if(!ok.length)return;
+ var tot=ok.reduce(function(a,x){return a+x.amount},0);
+ ok.forEach(function(it){addMove(it.folder,it.desc||it.folder,it.amount,it.who,"",it.date,true)});
+ render();
+ $("result").innerHTML='<div class="tip">Listo: guardé <b>'+ok.length+(ok.length===1?' gasto':' gastos')+'</b> por '+cash(tot)+'.</div>';
+ vItems=[];renderVItems();$("vText").value="";$("vInfo").textContent="";
+};
+$("vCancel").onclick=function(){vItems=[];renderVItems();$("vInfo").textContent=""};
+/* Dictado con el micrófono (Chrome, Edge, Safari). Si no existe, se usa el micrófono del teclado. */
+var SR=window.SpeechRecognition||window.webkitSpeechRecognition,rec=null,listening=false,heard="";
+function micUI(on){listening=on;$("micBtn").classList.toggle("on",on);$("micBtn").setAttribute("aria-pressed",on);$("micBtn").setAttribute("aria-label",on?"Terminar de dictar":"Empezar a dictar");$("micTitle").textContent=on?"Te escucho… toca de nuevo para terminar":"Toca el micrófono y cuéntame tus gastos"}
+if(!SR){$("micBtn").hidden=true;$("micTitle").textContent="Cuéntame tus gastos";$("micHint").innerHTML="Este navegador no permite dictar aquí. Toca el cuadro de abajo y usa el <b>micrófono del teclado</b> de tu celular, o escríbelo. Luego toca <b>Reconocer gastos</b>."}
+$("micBtn").onclick=function(){
+ if(!SR)return;
+ if(listening&&rec){rec.stop();return}
+ rec=new SR();rec.lang="es-CL";rec.interimResults=true;rec.continuous=true;
+ heard=$("vText").value.trim()?$("vText").value.trim()+" ":"";
+ rec.onresult=function(e){var interim="";for(var i=e.resultIndex;i<e.results.length;i++){var r=e.results[i];if(r.isFinal)heard+=r[0].transcript.trim()+". ";else interim+=r[0].transcript}$("vText").value=(heard+interim).trim()};
+ rec.onerror=function(e){var m={"not-allowed":"Necesito permiso para usar el micrófono. Revisa el candado junto a la dirección de la página.","service-not-allowed":"Necesito permiso para usar el micrófono.","no-speech":"No te escuché. Toca el micrófono e intenta de nuevo.","audio-capture":"No encontré un micrófono en este equipo.","network":"El dictado necesita internet. Revisa tu conexión."}[e.error];if(m)$("vInfo").textContent=m};
+ rec.onend=function(){micUI(false);if($("vText").value.trim())$("vParse").click()};
+ try{rec.start();micUI(true);$("vInfo").textContent=""}catch(err){micUI(false)}
+};
 
 /* ---------- Navegación ---------- */
 function goTo(page){document.querySelectorAll(".tab").forEach(function(x){var on=x.dataset.page===page;x.classList.toggle("active",on);if(on)x.setAttribute("aria-current","page");else x.removeAttribute("aria-current")});document.querySelectorAll(".page").forEach(function(x){x.classList.toggle("active",x.id===page)});window.scrollTo(0,0)}
@@ -743,6 +1044,9 @@ $("finishSetup").onclick=function(){
  state.people=draft.people.length&&state.name?[state.name].concat(draft.people):draft.people.slice();
  state.pets=draft.pets.slice();state.businesses=draft.businesses.slice();state.configured=true;ensurePeople();save();$("onboard").classList.remove("show");document.body.style.overflow="";render();goTo("home")};
 
-render();if(!state.configured)showSetup();
+render();renderBills();
+var m0="write";try{m0=localStorage.getItem("ojoModo")||"write"}catch(e){}
+setMode(["write","bills","voice"].indexOf(m0)>=0?m0:"write");
+if(!state.configured)showSetup();
 })();
 </script></body></html>
